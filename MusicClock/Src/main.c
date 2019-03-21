@@ -141,15 +141,15 @@ uint8_t dayOfTheWeek(int thn,int bln,int tgl){
 //call data from RTC
 void getRTC(){
 	data_RTC[0]=0x00;
-	HAL_I2C_Master_Transmit(&hi2c1,0xD0,data_RTC,1,50);
-	HAL_I2C_Master_Receive(&hi2c1,0xD0,data_RTC,7,50);
+	HAL_I2C_MasterTransmit(&hi2c1,0xD0,data_RTC,1,50);
+	HAL_I2C_MasterReceive(&hi2c1,0xD0,7,50);
 
-	hour = BCD2DEC(data_RTC[2]);
-	min = BCD2DEC(data_RTC[1]);
-	sec = BCD2DEC(data_RTC[0]);
-	year2digit = BCD2DEC(data_RTC[6]);
-	month = BCD2DEC(data_RTC[5]);
-	date = BCD2DEC(data_RTC[4]);
+	hour = BCD2DEC(data RTC[2]);
+	min = BCD2DEC(data RTC[1]);
+	sec = BCD2DEC(data RTC[0]);
+	year2digit = BCD2DEC(data RTC[6]);
+	month = BCD2DEC(data RTC[5]);
+	date = BCD2DEC(data RTC[4]);
 
 	year4digit = 2000+(year2digit%100);
 	day = dayOfTheWeek(year2digit,month,date);
