@@ -48,7 +48,6 @@
 #include "string.h"
 #include "stdarg.h"
 #include "pgmspace.h"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -141,19 +140,18 @@ uint8_t dayOfTheWeek(int thn,int bln,int tgl){
 //call data from RTC
 void getRTC(){
 	data_RTC[0]=0x00;
-	HAL_I2C_MasterTransmit(&hi2c1,0xD0,data_RTC,1,50);
-	HAL_I2C_MasterReceive(&hi2c1,0xD0,7,50);
+	HAL_I2C_Master_Transmit(&hi2c1,0xD0,data_RTC,1,50);
+	HAL_I2C_Master_Receive(&hi2c1,0xD0,data_RTC,7,50);
 
-	hour = BCD2DEC(data RTC[2]);
-	min = BCD2DEC(data RTC[1]);
-	sec = BCD2DEC(data RTC[0]);
-	year2digit = BCD2DEC(data RTC[6]);
-	month = BCD2DEC(data RTC[5]);
-	date = BCD2DEC(data RTC[4]);
+	hour = BCD2DEC(data_RTC[2]);
+	min = BCD2DEC(data_RTC[1]);
+	sec = BCD2DEC(data_RTC[0]);
+	year2digit = BCD2DEC(data_RTC[6]);
+	month = BCD2DEC(data_RTC[5]);
+	date = BCD2DEC(data_RTC[4]);
 
 	year4digit = 2000+(year2digit%100);
 	day = dayOfTheWeek(year2digit,month,date);
-
 }
 /* USER CODE END PFP */
 
@@ -207,8 +205,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  getRTC();
-	  char data_from_RTC[100];
+	 getRTC();
+	 char data_from_RTC[100];
   }
   /* USER CODE END 3 */
 }
@@ -471,7 +469,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -481,12 +478,6 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15 
                           |GPIO_PIN_4, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : PE4 */
-  GPIO_InitStruct.Pin = GPIO_PIN_4;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 PD14 PD15 
                            PD4 */
