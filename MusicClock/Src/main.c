@@ -43,6 +43,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+#include "stdarg.h"
+#include "pgmspace.h"
 
 /* USER CODE END Includes */
 
@@ -71,6 +76,8 @@ DMA_HandleTypeDef hdma_spi3_tx;
 
 TIM_HandleTypeDef htim2;
 
+UART_HandleTypeDef huart1;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -83,8 +90,71 @@ static void MX_I2C1_Init(void);
 static void MX_I2S3_Init(void);
 static void MX_DAC_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
+void vprint(const char *fmt,va_list argp)
+{
+	char string[200];
+	if(0 < vsprintf(string,fmt,argp))
+	{
+		HAL_UART_Transmit(&huart1, (uint8_t*)string, strlen(string), 0xffffff);
+	}
+}
+void my_prinft(const char *fmt, ...)
+{
+	va_list argp;
+	va_start(argp,fmt);
+	vprint(fmt, argp);
+	va_end(argp);
+}
+////////////////////////////////////////
+uint8_t data_RTC[8];
+uint8_t hour,min,sec,date,month,year2digit,day;
+int year4digit;
 
+//convert decimal to bcd
+uint8_t BCD2DEC(uint8_t data){
+	return (data>>4)*10+(data&0x0f);
+}
+uint8_t DEC2BCD(uint8_t data){
+	return (data/10)<<4|(data%10);
+}
+//calculate date of the week
+const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
+static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d){
+	if(y>200){
+		y-=2000;
+	}
+	uint16_t days = d;
+	for(uint8_t i=1; i<m; ++i){
+		days+=pgm_read_byte(daysInMonth+i-1);
+	}
+	if (m>2 && y%4==0){
+		++days;
+	}
+	return days+365*y+(y+3)/4-1;
+}
+uint8_t dayOfTheWeek(int thn,int bln,int tgl){
+	uint16_t day = date2days(thn,bln,tgl);
+	return (day+6)%7;
+}
+//call data from RTC
+void getRTC(){
+	data_RTC[0]=0x00;
+	HAL_I2C_MasterTransmit(&hi2c1,0xD0,data_RTC,1,50);
+	HAL_I2C_MasterReceive(&hi2c1,0xD0,7,50);
+
+	hour = BCD2DEC(data RTC[2]);
+	min = BCD2DEC(data RTC[1]);
+	sec = BCD2DEC(data RTC[0]);
+	year2digit = BCD2DEC(data RTC[6]);
+	month = BCD2DEC(data RTC[5]);
+	date = BCD2DEC(data RTC[4]);
+
+	year4digit = 2000+(year2digit%100);
+	day = dayOfTheWeek(year2digit,month,date);
+
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -125,6 +195,7 @@ int main(void)
   MX_I2S3_Init();
   MX_DAC_Init();
   MX_TIM2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -136,6 +207,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  getRTC();
+	  char data_from_RTC[100];
   }
   /* USER CODE END 3 */
 }
@@ -337,6 +410,39 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 
