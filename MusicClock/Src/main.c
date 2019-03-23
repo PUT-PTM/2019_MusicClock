@@ -74,11 +74,71 @@ I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
 
 TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+//ekran
+volatile int licznik = 1;
+#define DISP_1_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET)
+#define DISP_1_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET)
+#define DISP_2_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET)
+#define DISP_2_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET)
+#define DISP_3_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET)
+#define DISP_3_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET)
+#define DISP_4_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET)
+#define DISP_4_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET)
 
+#define DISP_VAL_NULL HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                               GPIO_PIN_2 | GPIO_PIN_3 | \
+                                               GPIO_PIN_4 | GPIO_PIN_5 | \
+                                               GPIO_PIN_6 | GPIO_PIN_7 , \
+                                               GPIO_PIN_SET)
+
+#define DISP_VAL_0	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_2 | GPIO_PIN_3 | \
+                                              GPIO_PIN_4 | GPIO_PIN_5 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_1	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_2	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_3 | GPIO_PIN_4 | \
+                                              GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_3	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_2 | GPIO_PIN_3 | \
+                                              GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_4	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 | \
+    	                                       GPIO_PIN_5 | GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_5	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
+                                              GPIO_PIN_3 | GPIO_PIN_5 | \
+                                              GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_6	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
+                                              GPIO_PIN_3 | GPIO_PIN_4 | \
+                                              GPIO_PIN_5 | GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_7	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_2 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_8	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_2 | GPIO_PIN_3 | \
+                                              GPIO_PIN_4 | GPIO_PIN_5 | \
+                                              GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+#define DISP_VAL_9	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+                                              GPIO_PIN_2 | GPIO_PIN_3 | \
+                                              GPIO_PIN_5 | GPIO_PIN_6 , \
+                                              GPIO_PIN_RESET)
+
+#define DISP_DOT  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7 , \
+                                              GPIO_PIN_RESET)
+////////////////////////////////////////
+uint8_t hour,min,sec,date,month,year2digit,day;
+#define pgm_read_byte(x) (*(x))
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,6 +150,7 @@ static void MX_I2S3_Init(void);
 static void MX_DAC_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 void vprint(const char *fmt,va_list argp)
 {
@@ -108,7 +169,6 @@ void my_prinft(const char *fmt, ...)
 }
 ////////////////////////////////////////
 uint8_t data_RTC[8];
-uint8_t hour,min,sec,date,month,year2digit,day;
 int year4digit;
 
 //convert decimal to bcd
@@ -121,12 +181,12 @@ uint8_t DEC2BCD(uint8_t data){
 //calculate date of the week
 const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d){
-	if(y>200){
+	if(y>=2000){
 		y-=2000;
 	}
 	uint16_t days = d;
 	for(uint8_t i=1; i<m; ++i){
-		days+=pgm_read_byte(daysInMonth+i-1);
+		days += pgm_read_byte (daysInMonth + i - 1);
 	}
 	if (m>2 && y%4==0){
 		++days;
@@ -152,6 +212,81 @@ void getRTC(){
 
 	year4digit = 2000+(year2digit%100);
 	day = dayOfTheWeek(year2digit,month,date);
+}
+//
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance == TIM3)
+	{
+		uint8_t h1=hour/10;
+		uint8_t h2 = hour%10;
+		uint8_t m1=min/10;
+		uint8_t m2 = min%10;
+		DISP_1_OFF;
+		DISP_2_OFF;
+		DISP_3_OFF;
+		DISP_4_OFF;
+		DISP_VAL_NULL;
+		switch(licznik){
+		  case 1:
+		   DISP_1_ON;
+		   switch (h1) {
+		   	   case 0: DISP_VAL_0; break;
+		   	   case 1: DISP_VAL_1; break;
+		   	   case 2: DISP_VAL_2; break;
+		    	}
+		    	licznik++;
+		    	break;
+		  case 2:
+		   DISP_2_ON;
+		   switch (h2) {
+		   	   case 0: DISP_VAL_0; break;
+		   	   case 1: DISP_VAL_1; break;
+		   	   case 2: DISP_VAL_2; break;
+		   	   case 3: DISP_VAL_3; break;
+		   	   case 4: DISP_VAL_4; break;
+		   	   case 5: DISP_VAL_5; break;
+		   	   case 6: DISP_VAL_6; break;
+		   	   case 7: DISP_VAL_7; break;
+		   	   case 8: DISP_VAL_8; break;
+		   	   case 9: DISP_VAL_9; break;
+		    }
+		   DISP_DOT;
+		   licznik++;
+		   break;
+		  case 3:
+		    DISP_3_ON;
+		    switch (m1) {
+		    	case 0: DISP_VAL_0; break;
+		    	case 1: DISP_VAL_1; break;
+		    	case 2: DISP_VAL_2; break;
+		    	case 3: DISP_VAL_3; break;
+		    	case 4: DISP_VAL_4; break;
+		    	case 5: DISP_VAL_5; break;
+		    	case 6: DISP_VAL_6; break;
+		    }
+		    licznik++;
+		    break;
+		    case 4:
+		    DISP_4_ON;
+		    switch (m2) {
+		    	case 0: DISP_VAL_0; break;
+		    	case 1: DISP_VAL_1; break;
+		    	case 2: DISP_VAL_2; break;
+		    	case 3: DISP_VAL_3; break;
+		    	case 4: DISP_VAL_4; break;
+		    	case 5: DISP_VAL_5; break;
+		    	case 6: DISP_VAL_6; break;
+		    	case 7: DISP_VAL_7; break;
+		    	case 8: DISP_VAL_8; break;
+		    	case 9: DISP_VAL_9; break;
+		    	}
+		    licznik=1;
+		    break;
+		   }
+
+	}
+
 }
 /* USER CODE END PFP */
 
@@ -194,8 +329,9 @@ int main(void)
   MX_DAC_Init();
   MX_TIM2_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -206,7 +342,6 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	 getRTC();
-	 char data_from_RTC[100];
   }
   /* USER CODE END 3 */
 }
@@ -412,6 +547,50 @@ static void MX_TIM2_Init(void)
 }
 
 /**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 299;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 69;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -469,15 +648,39 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5 
+                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15 
                           |GPIO_PIN_4, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PE2 PE3 PE4 PE5 
+                           PE6 PE7 PE0 PE1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5 
+                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB12 PB13 PB14 PB15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 PD14 PD15 
                            PD4 */
