@@ -213,7 +213,22 @@ void getRTC(){
 	year4digit = 2000+(year2digit%100);
 	day = dayOfTheWeek(year2digit,month,date);
 }
-//
+///set data and time
+void setRTC(uint8_t tgl, uint8_t bln, uint16_t thn, uint8_t jam, uint8_t mnt, uint8_t dtk){
+	uint8_t data_RTC[8];
+	data_RTC[0] = 0x00;
+	data_RTC[1] = DEC2BCD(dtk);//seconds
+	data_RTC[2] = DEC2BCD(mnt); //set minute
+	data_RTC[3] = DEC2BCD(jam); //set hour
+
+	data_RTC[5] = DEC2BCD(tgl);  //set date
+	data_RTC[6] = DEC2BCD(bln); //set month
+	data_RTC[7] = DEC2BCD(thn-2000);   //set year
+
+	HAL_I2C_Master_Transmit(&hi2c1,0xD0,data_RTC,8,50);
+	HAL_Delay(100);
+}
+////
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM3)
@@ -302,7 +317,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -332,6 +346,7 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -341,6 +356,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  //setRTC (24,03,2019,14,35,0);
 	 getRTC();
   }
   /* USER CODE END 3 */
