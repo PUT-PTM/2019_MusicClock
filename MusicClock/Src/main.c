@@ -44,10 +44,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "ff.h"
 #include "stdlib.h"
 #include "string.h"
 #include "stdarg.h"
 #include "pgmspace.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -73,8 +75,11 @@ I2C_HandleTypeDef hi2c1;
 I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;
 
+SPI_HandleTypeDef hspi1;
+
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
 
 UART_HandleTypeDef huart1;
 
@@ -139,6 +144,28 @@ volatile int licznik = 1;
 ////////////////////////////////////////
 uint8_t hour,min,sec,date,month,year2digit,day;
 #define pgm_read_byte(x) (*(x))
+
+//pliki
+static FATFS FatFs;
+FRESULT fresult;
+FIL file;
+UINT bytes_written;
+UINT bytes_read;
+
+uint8_t audioBuffer8;
+uint16_t audioBuffer16;
+char fileNames[64][13];
+char currentFileName[13];
+
+char dataDescription[4];
+int32_t sampleRate=0;
+int16_t audioBits=0;
+
+int32_t sChunkSize = 0;
+int32_t hChunkSize = 0;
+
+int16_t fileNamesSize =0;
+int16_t currentFile=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -151,6 +178,8 @@ static void MX_DAC_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM4_Init(void);
+static void MX_SPI1_Init(void);
 /* USER CODE BEGIN PFP */
 void vprint(const char *fmt,va_list argp)
 {
@@ -299,9 +328,78 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		    licznik=1;
 		    break;
 		   }
-
 	}
+}
+void choose(){
+	if(sampleRate==44100) { htim4.Instance->ARR = 951; }
+	else if(sampleRate == 8000)  { TIM4->ARR = 5249; }
+	else if(sampleRate == 16000) { TIM4->ARR = 2624; }
+	else if(sampleRate == 22050) { TIM4->ARR = 1903; }
+	else if(sampleRate == 24000) { TIM4->ARR = 1749; }
+	else if(sampleRate == 32000) { TIM4->ARR = 1311; }
+	else if(sampleRate == 48000) { TIM4->ARR = 874;  }
+	else if(sampleRate == 88200) { TIM4->ARR = 475;  }
+	else if(sampleRate == 96000) { TIM4->ARR = 436;  }
+	else { htim4.Instance->ARR = 951; }
+}
+void startSong(char* fileName){
+	if(fileNamesSize > 0){
+		fresult = f_open(&file, fileName, FA_READ);
+		fresult = f_lseek(&file, f_tell(file) + 16);
+		fresult = f_read(&file, &sChunkSize, 4, &bytes_read);
+		fresult = f_lseek(&file, f_tell(&file) + 4);
+		fresult = f_read(&file, &sampleRate, 4, &bytes_read);
 
+		choose();
+
+		fresult = f_lseek(&file, f_tell(&file) + 6 );
+		fresult = f_read(&file, &audioBits, 2, &bytes_read);
+
+		sChunkSize -= 16;
+		fresult = f_lseek(&file, f_tell(&file) + sChunkSize );
+		memset(dataDescription, 0, sizeof(dataDescription));
+		fresult = f_read(&file, &dataDescription, 4, &bytes_read);
+		if(strcmp(dataDescription,"DATA") == 0){
+			fresult = f_lseek(&file, f_tell(&file) + 4 );
+		}
+		else {
+			fresult = f_read(&file, &hChunkSize, 4, &bytes_read);
+			hChunkSize += 8;
+			fresult = f_lseek(&file, f_tell(&file) + hChunkSize );
+		}
+
+		//i2c/s
+	}
+}
+void changeFile(int8_t changeValue){
+	currentFile+=changeValue;
+	if(currentFile >= fileNamesSize){
+		currentFile=0;
+	}
+	else if(currentFile < 0){
+		currentFile = fileNamesSize -1;
+	}
+	memset(currentFileName, 0, sizeof(currentFileName));
+	strcpy(currentFileName, fileNames[currentFile]);
+	startSong(currentFileName);
+}
+void playSong() {
+	if (!f_eof(&file))
+	{
+		if(audioBits == 16) {
+			fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
+			audioBuffer16 = (double)audioBuffer16 / 60.0;
+		}
+		else if (audioBits == 8) {
+			fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
+			audioBuffer16 = (double)audioBuffer8 / 60.0;
+		}
+	}
+	else
+	{
+		fresult = f_close(&file);
+		change_file(1);
+	}
 }
 /* USER CODE END PFP */
 
@@ -344,9 +442,12 @@ int main(void)
   MX_TIM2_Init();
   MX_USART1_UART_Init();
   MX_TIM3_Init();
+  MX_TIM4_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
-
+  fresult = f_mount(&FatFs, "", 0);
+  if(fresult != FR_OK){HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12); }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -519,6 +620,44 @@ static void MX_I2S3_Init(void)
 }
 
 /**
+  * @brief SPI1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI1_Init(void)
+{
+
+  /* USER CODE BEGIN SPI1_Init 0 */
+
+  /* USER CODE END SPI1_Init 0 */
+
+  /* USER CODE BEGIN SPI1_Init 1 */
+
+  /* USER CODE END SPI1_Init 1 */
+  /* SPI1 parameter configuration*/
+  hspi1.Instance = SPI1;
+  hspi1.Init.Mode = SPI_MODE_MASTER;
+  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.NSS = SPI_NSS_SOFT;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi1.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SPI1_Init 2 */
+
+  /* USER CODE END SPI1_Init 2 */
+
+}
+
+/**
   * @brief TIM2 Initialization Function
   * @param None
   * @retval None
@@ -603,6 +742,50 @@ static void MX_TIM3_Init(void)
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
+
+}
+
+/**
+  * @brief TIM4 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM4_Init(void)
+{
+
+  /* USER CODE BEGIN TIM4_Init 0 */
+
+  /* USER CODE END TIM4_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM4_Init 1 */
+
+  /* USER CODE END TIM4_Init 1 */
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 1;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 1;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim4, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM4_Init 2 */
+
+  /* USER CODE END TIM4_Init 2 */
 
 }
 
