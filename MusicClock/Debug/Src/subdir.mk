@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/MY_CS43L22.c \
 ../Src/diskio.c \
 ../Src/ff.c \
 ../Src/ffsystem.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../Src/system_stm32f4xx.c 
 
 OBJS += \
+./Src/MY_CS43L22.o \
 ./Src/diskio.o \
 ./Src/ff.o \
 ./Src/ffsystem.o \
@@ -24,6 +26,7 @@ OBJS += \
 ./Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Src/MY_CS43L22.d \
 ./Src/diskio.d \
 ./Src/ff.d \
 ./Src/ffsystem.d \

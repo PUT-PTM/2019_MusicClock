@@ -19,8 +19,6 @@ Src/main.o: ../Src/main.c \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -36,7 +34,8 @@ Src/main.o: ../Src/main.c \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/ff.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/ffconf.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/pgmspace.h
+ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/pgmspace.h \
+ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/MY_CS43L22.h
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h:
 
@@ -78,10 +77,6 @@ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
 
-D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h:
-
-D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h:
-
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
@@ -113,3 +108,5 @@ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/ff.h:
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/ffconf.h:
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/pgmspace.h:
+
+D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/MY_CS43L22.h:

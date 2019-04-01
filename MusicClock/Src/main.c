@@ -50,6 +50,8 @@
 #include "stdarg.h"
 #include "pgmspace.h"
 #include <stdbool.h>
+#include "MY_CS43L22.h"
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,8 +70,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-DAC_HandleTypeDef hdac;
-
 I2C_HandleTypeDef hi2c1;
 
 I2S_HandleTypeDef hi2s3;
@@ -77,7 +77,6 @@ DMA_HandleTypeDef hdma_spi3_tx;
 
 SPI_HandleTypeDef hspi1;
 
-TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
@@ -86,6 +85,9 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 //ekran
 volatile int licznik = 1;
+#define PI 3.14159f
+#define F_SAMPLE 50000.0f
+#define F_OUT 1500.0f
 #define DISP_1_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET)
 #define DISP_1_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET)
 #define DISP_2_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET)
@@ -166,6 +168,14 @@ int32_t hChunkSize = 0;
 
 int16_t fileNamesSize =0;
 int16_t currentFile=0;
+
+float mySinValue;
+float sample_dt;
+uint16_t sample_N;
+uint16_t i_t;
+
+uint32_t myDacVal;
+int16_t dataI2S[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -174,8 +184,6 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_I2S3_Init(void);
-static void MX_DAC_Init(void);
-static void MX_TIM2_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
@@ -389,10 +397,12 @@ void playSong() {
 		if(audioBits == 16) {
 			fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
 			audioBuffer16 = (double)audioBuffer16 / 60.0;
+			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
 		}
 		else if (audioBits == 8) {
 			fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
 			audioBuffer16 = (double)audioBuffer8 / 60.0;
+			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
 		}
 	}
 	else
@@ -401,6 +411,8 @@ void playSong() {
 		change_file(1);
 	}
 }
+
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -415,6 +427,8 @@ void playSong() {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	sample_dt = F_OUT / F_SAMPLE;
+	sample_N = F_SAMPLE / F_OUT;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -438,13 +452,28 @@ int main(void)
   MX_DMA_Init();
   MX_I2C1_Init();
   MX_I2S3_Init();
-  MX_DAC_Init();
-  MX_TIM2_Init();
   MX_USART1_UART_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+  CS43_Init(hi2c1, MODE_ANALOG);
+  CS43_SetVolume(75);
+  CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
+  CS43_Start();
+
+  for(uint16_t i=0; i<sample_N; i++)
+  	{
+  		mySinValue = sinf(i*2*PI*sample_dt);
+  		dataI2S[i*2] = (mySinValue )*8000;    //Right data (0 2 4 6 8 10 12)
+  		dataI2S[i*2 + 1] =(mySinValue )*8000; //Left data  (1 3 5 7 9 11 13)
+  	}
+
+  //HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
+
+ // HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
+  //HAL_TIM_Base_Start_IT(&htim2);
+
   HAL_TIM_Base_Start_IT(&htim3);
   fresult = f_mount(&FatFs, "", 0);
   if(fresult != FR_OK){HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12); }
@@ -511,44 +540,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-}
-
-/**
-  * @brief DAC Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_DAC_Init(void)
-{
-
-  /* USER CODE BEGIN DAC_Init 0 */
-
-  /* USER CODE END DAC_Init 0 */
-
-  DAC_ChannelConfTypeDef sConfig = {0};
-
-  /* USER CODE BEGIN DAC_Init 1 */
-
-  /* USER CODE END DAC_Init 1 */
-  /**DAC Initialization 
-  */
-  hdac.Instance = DAC;
-  if (HAL_DAC_Init(&hdac) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /**DAC channel OUT1 config 
-  */
-  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
-  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN DAC_Init 2 */
-
-  /* USER CODE END DAC_Init 2 */
-
 }
 
 /**
@@ -654,50 +645,6 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
-
-}
-
-/**
-  * @brief TIM2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM2_Init(void)
-{
-
-  /* USER CODE BEGIN TIM2_Init 0 */
-
-  /* USER CODE END TIM2_Init 0 */
-
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM2_Init 1 */
-
-  /* USER CODE END TIM2_Init 1 */
-  htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 84-1;
-  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 20-1;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM2_Init 2 */
-
-  /* USER CODE END TIM2_Init 2 */
 
 }
 
@@ -893,7 +840,21 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
+	UNUSED(htim);
+
+	if(htim->Instance == TIM2){
+		mySinValue = sinf(i_t * 2 * PI * sample_dt);
+		myDacVal = (mySinValue + 1)*127;
+		//HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_8B_R, myDacVal);
+
+		i_t++;
+		if(i_t>=sample_N) i_t=0;
+	}
+
+}*/
 /* USER CODE END 4 */
 
 /**
