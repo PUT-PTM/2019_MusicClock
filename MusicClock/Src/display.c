@@ -1,7 +1,6 @@
 #include "display.h"
 #include "stm32f4xx_it.h"
 
-
 const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
 int licznik = 1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
@@ -60,7 +59,6 @@ void setRTC(uint8_t tgl, uint8_t bln, uint16_t thn, uint8_t jam, uint8_t mnt, ui
 	HAL_I2C_Master_Transmit(&hi2c1,0xD0,data_RTC,8,50);
 	HAL_Delay(100);
 }
-////
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM3)
@@ -132,5 +130,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		    break;
 		   }
 	}
+	else if (htim->Instance == TIM4)
+		{
+			playSong();
+		}
 }
 

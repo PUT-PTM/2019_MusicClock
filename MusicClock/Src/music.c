@@ -1,4 +1,7 @@
 #include "music.h"
+#include "main.h"
+#include "diskio.h"
+#include "ff.h"
 #include "stm32f4xx_it.h"
 
 int32_t sampleRate=0;
@@ -8,7 +11,6 @@ int32_t sChunkSize = 0;
 int32_t hChunkSize = 0;
 
 int16_t fileNamesSize =0;
-int16_t currentFile=0;
 
 void choose(){
 	if(sampleRate==44100) { htim4.Instance->ARR = 951; }
@@ -39,6 +41,7 @@ void startSong(char* fileName){
 		fresult = f_lseek(&file, f_tell(&file) + sChunkSize );
 		memset(dataDescription, 0, sizeof(dataDescription));
 		fresult = f_read(&file, &dataDescription, 4, &bytes_read);
+
 		if(strcmp(dataDescription,"DATA") == 0){
 			fresult = f_lseek(&file, f_tell(&file) + 4 );
 		}
@@ -47,8 +50,6 @@ void startSong(char* fileName){
 			hChunkSize += 8;
 			fresult = f_lseek(&file, f_tell(&file) + hChunkSize );
 		}
-
-		//i2c/s
 	}
 }
 void changeFile(int8_t changeValue){
@@ -69,18 +70,42 @@ void playSong() {
 		if(audioBits == 16) {
 			fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
 			audioBuffer16 = (double)audioBuffer16 / 60.0;
-			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
+			HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16, sample_N*2);
 		}
 		else if (audioBits == 8) {
 			fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
 			audioBuffer16 = (double)audioBuffer8 / 60.0;
-			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
+			HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16, sample_N*2);
 		}
 	}
 	else
 	{
 		fresult = f_close(&file);
-		change_file(1);
+		changeFile(1);
 	}
 }
+void map_filenames()
+{
+	const char* path = "/";
+	DIR dir;
+	FILINFO fno;
 
+	fresult = f_opendir(&dir, path);
+	if (fresult == FR_OK) {
+	    for (;;) {
+	        fresult = f_readdir(&dir, &fno);
+	        if (fresult != FR_OK || fno.fname[0] == 0) { //B³ıd
+	        	if(fresult!= FR_OK) HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+				break;
+			}
+	        if (!(fno.fattrib & AM_DIR) && strstr(fno.fname,".WAV") != NULL) {
+				strcpy(fileNames[fileNamesSize], fno.fname);
+				fileNamesSize++;
+	        }
+	    }
+	}
+	else {
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+	}
+	f_closedir(&dir);
+}
