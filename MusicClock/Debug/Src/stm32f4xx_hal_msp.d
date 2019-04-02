@@ -30,8 +30,7 @@ Src/stm32f4xx_hal_msp.o: ../Src/stm32f4xx_hal_msp.c \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h:
 
@@ -96,5 +95,3 @@ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
-
-D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
