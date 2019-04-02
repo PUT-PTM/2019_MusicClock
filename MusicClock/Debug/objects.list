@@ -24,6 +24,7 @@
 "Src/ffsystem.o"
 "Src/ffunicode.o"
 "Src/main.o"
+"Src/music.o"
 "Src/stm32f4xx_hal_msp.o"
 "Src/stm32f4xx_it.o"
 "Src/system_stm32f4xx.o"

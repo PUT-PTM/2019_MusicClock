@@ -39,7 +39,8 @@ Src/main.o: ../Src/main.c \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/ff.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/pgmspace.h \
  D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/stm32f4xx_it.h \
- D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h
+ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h \
+ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/music.h
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h:
 
@@ -122,3 +123,5 @@ D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/pgmspace.h:
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/stm32f4xx_it.h:
 
 D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/main.h:
+
+D:/Studia/Semestr\ 4/PTM/2019_MusicClock/MusicClock/Inc/music.h:

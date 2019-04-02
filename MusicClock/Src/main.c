@@ -53,6 +53,7 @@
 #include "MY_CS43L22.h"
 #include <math.h>
 #include "display.h"
+#include "music.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -78,36 +79,13 @@ DMA_HandleTypeDef hdma_spi3_tx;
 
 SPI_HandleTypeDef hspi1;
 
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
-#define PI 3.14159f
-#define F_SAMPLE 50000.0f
-#define F_OUT 1500.0f
+
 ////////////////////////////////////////
-//pliki
-static FATFS FatFs;
-FRESULT fresult;
-FIL file;
-UINT bytes_written;
-UINT bytes_read;
-
-uint8_t audioBuffer8;
-uint16_t audioBuffer16;
-char fileNames[64][13];
-char currentFileName[13];
-
-char dataDescription[4];
-int32_t sampleRate=0;
-int16_t audioBits=0;
-
-int32_t sChunkSize = 0;
-int32_t hChunkSize = 0;
-
-int16_t fileNamesSize =0;
-int16_t currentFile=0;
-
 float mySinValue;
 float sample_dt;
 uint16_t sample_N;
@@ -115,6 +93,7 @@ uint16_t i_t;
 
 uint32_t myDacVal;
 int16_t dataI2S[100];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -126,84 +105,8 @@ static void MX_I2S3_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
-
-////////////////////////////////////////
-
-void choose(){
-	if(sampleRate==44100) { htim4.Instance->ARR = 951; }
-	else if(sampleRate == 8000)  { TIM4->ARR = 5249; }
-	else if(sampleRate == 16000) { TIM4->ARR = 2624; }
-	else if(sampleRate == 22050) { TIM4->ARR = 1903; }
-	else if(sampleRate == 24000) { TIM4->ARR = 1749; }
-	else if(sampleRate == 32000) { TIM4->ARR = 1311; }
-	else if(sampleRate == 48000) { TIM4->ARR = 874;  }
-	else if(sampleRate == 88200) { TIM4->ARR = 475;  }
-	else if(sampleRate == 96000) { TIM4->ARR = 436;  }
-	else { htim4.Instance->ARR = 951; }
-}
-void startSong(char* fileName){
-	if(fileNamesSize > 0){
-		fresult = f_open(&file, fileName, FA_READ);
-		fresult = f_lseek(&file, f_tell(file) + 16);
-		fresult = f_read(&file, &sChunkSize, 4, &bytes_read);
-		fresult = f_lseek(&file, f_tell(&file) + 4);
-		fresult = f_read(&file, &sampleRate, 4, &bytes_read);
-
-		choose();
-
-		fresult = f_lseek(&file, f_tell(&file) + 6 );
-		fresult = f_read(&file, &audioBits, 2, &bytes_read);
-
-		sChunkSize -= 16;
-		fresult = f_lseek(&file, f_tell(&file) + sChunkSize );
-		memset(dataDescription, 0, sizeof(dataDescription));
-		fresult = f_read(&file, &dataDescription, 4, &bytes_read);
-		if(strcmp(dataDescription,"DATA") == 0){
-			fresult = f_lseek(&file, f_tell(&file) + 4 );
-		}
-		else {
-			fresult = f_read(&file, &hChunkSize, 4, &bytes_read);
-			hChunkSize += 8;
-			fresult = f_lseek(&file, f_tell(&file) + hChunkSize );
-		}
-
-		//i2c/s
-	}
-}
-void changeFile(int8_t changeValue){
-	currentFile+=changeValue;
-	if(currentFile >= fileNamesSize){
-		currentFile=0;
-	}
-	else if(currentFile < 0){
-		currentFile = fileNamesSize -1;
-	}
-	memset(currentFileName, 0, sizeof(currentFileName));
-	strcpy(currentFileName, fileNames[currentFile]);
-	startSong(currentFileName);
-}
-void playSong() {
-	if (!f_eof(&file))
-	{
-		if(audioBits == 16) {
-			fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
-			audioBuffer16 = (double)audioBuffer16 / 60.0;
-			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
-		}
-		else if (audioBits == 8) {
-			fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
-			audioBuffer16 = (double)audioBuffer8 / 60.0;
-			//HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16*8000, &bytes_read);
-		}
-	}
-	else
-	{
-		fresult = f_close(&file);
-		change_file(1);
-	}
-}
-
 
 /* USER CODE END PFP */
 
@@ -247,6 +150,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_SPI1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   //setRTC (2,04,2019,12,18,0);
 
@@ -263,13 +167,10 @@ int main(void)
   	}
 
   HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
-
- // HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
-  //HAL_TIM_Base_Start_IT(&htim2);
-
   HAL_TIM_Base_Start_IT(&htim3);
-  fresult = f_mount(&FatFs, "", 0);
-  if(fresult != FR_OK){HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12); }
+
+ ;
+  if ((fresult = f_mount(&FatFs, "", 0))== FR_OK){HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12); }////////////////////////////
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -442,6 +343,50 @@ static void MX_SPI1_Init(void)
 }
 
 /**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 83;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 999;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
   * @brief TIM3 Initialization Function
   * @param None
   * @retval None
@@ -558,8 +503,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5 
@@ -569,7 +514,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PE2 PE3 PE4 PE5 
                            PE6 PE7 PE0 PE1 */
@@ -587,8 +532,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PD4 */
-  GPIO_InitStruct.Pin = GPIO_PIN_4;
+  /*Configure GPIO pins : PD12 PD4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

@@ -11,6 +11,7 @@ C_SRCS += \
 ../Src/ffsystem.c \
 ../Src/ffunicode.c \
 ../Src/main.c \
+../Src/music.c \
 ../Src/stm32f4xx_hal_msp.c \
 ../Src/stm32f4xx_it.c \
 ../Src/system_stm32f4xx.c 
@@ -23,6 +24,7 @@ OBJS += \
 ./Src/ffsystem.o \
 ./Src/ffunicode.o \
 ./Src/main.o \
+./Src/music.o \
 ./Src/stm32f4xx_hal_msp.o \
 ./Src/stm32f4xx_it.o \
 ./Src/system_stm32f4xx.o 
@@ -35,6 +37,7 @@ C_DEPS += \
 ./Src/ffsystem.d \
 ./Src/ffunicode.d \
 ./Src/main.d \
+./Src/music.d \
 ./Src/stm32f4xx_hal_msp.d \
 ./Src/stm32f4xx_it.d \
 ./Src/system_stm32f4xx.d 
