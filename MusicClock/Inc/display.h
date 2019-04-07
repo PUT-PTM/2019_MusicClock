@@ -68,7 +68,7 @@
 //variables
 uint8_t hour,min,sec,date,month,year2digit,day; //rtc
 uint8_t data_RTC[8];
-int year4digit;
+uint16_t year4digit;
 uint8_t BCD2DEC(uint8_t data);
 uint8_t DEC2BCD(uint8_t data);
 uint8_t dayOfTheWeek(int thn,int bln,int tgl);
@@ -83,6 +83,6 @@ TIM_HandleTypeDef htim4;
 void vprint(const char *fmt,va_list argp);
 void my_prinft(const char *fmt, ...);
 void getRTC();
-void setRTC(uint8_t tgl, uint8_t bln, uint16_t thn, uint8_t jam, uint8_t mnt, uint8_t dtk);
+void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec);
 
 

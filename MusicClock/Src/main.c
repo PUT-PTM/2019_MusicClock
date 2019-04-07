@@ -185,7 +185,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 //setRTC (6,04,2019,13,41,0);
+	 //setRTC (6,04,2019,13,45,0);
 	 getRTC();
   }
   /* USER CODE END 3 */

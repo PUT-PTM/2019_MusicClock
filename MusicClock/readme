@@ -1,0 +1,25 @@
+1. Przyciski - wybor opcji:
+Potrzebujemy: ustawianie zegara, nastawianie alarmu, wybor muzyki, wylaczanie alarmu
+Opcjonalnie: drzemka
+Mamy: 8 przyciskow - k0-k7
+Opcja1: (przykladowo, kolejnosc do ustalenia)
+	k0 - przesuwanie po opcjach, (w tym momencie do czasu nacisniecia OK, na wyswietlaczu segmentowym widac litery
+(lub liczby, jak wolimy) oznaczajace kolejne opcje (C(clock) - ustawienie zegara, A - ustawienie alarmu, S(select) - wybor muzyki)
+	k1 - OK - zatwierdzenie opcji, ktora jest wyswietlana
+	-> dla C i A: k0 - przesuwanie godziny, k1 - przesuwanie minuty, k2 - OK - zatwierdzenie, powrót do wyswietlania godziny
+	-> dla S: k0 - przesuwanie po utworach (na wyswietlaczu: 1 - utwor pierwszy, 2 - utwor drugi itp.), k1 - OK
+	k2 - wylaczenie budzika (docelowo do tego inny, wiekszy przycisk)
+Opcja2 - parami:
+	k0 - przesuwanie godziny po minucie (wtedy najlepiej zeby przytrzymanie przycisku powodowalo szybkie przesuwanie)
+	k1 - OK dla ustawiania godziny
+	k2 - przesuwanie godziny alarmu po minucie
+	k3 - OK dla alarmu
+	k4 - przewijanie utworow
+	k5 - OK dla utworu
+	k6 - wylaczanie budzika
+	k7 - drzemka
+2. Wyswietlacz - normalnie zegar, przy ustawianiu ktores opcji odpowiednie dane:
+	nie robilam tego jeszcze - co ma sie wyswietlac bedzie zaprogramowane juz w przerwaniu od czasu :P (jakbym zapomniala)
+	jakas zmienna w zaleznosci od ktorej pokazywac sie bedzie cos innego
+3. Do zrobienia:
+	- zmiana czasu przyciskiem, bo aktualnie zawieszam zegar... 
