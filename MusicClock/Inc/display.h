@@ -72,6 +72,7 @@ uint16_t year4digit;
 uint8_t BCD2DEC(uint8_t data);
 uint8_t DEC2BCD(uint8_t data);
 uint8_t dayOfTheWeek(int thn,int bln,int tgl);
+int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
 I2C_HandleTypeDef hi2c1;
 I2S_HandleTypeDef hi2s3;
 DMA_HandleTypeDef hdma_spi3_tx;

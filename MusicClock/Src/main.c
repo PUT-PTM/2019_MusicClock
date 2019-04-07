@@ -112,7 +112,7 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+option=0;
 /* USER CODE END 0 */
 
 /**
@@ -185,8 +185,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 //setRTC (6,04,2019,13,45,0);
-	 getRTC();
+	 //setRTC (7,04,2019,19,53,0);
   }
   /* USER CODE END 3 */
 }
