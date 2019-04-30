@@ -4,7 +4,8 @@
 const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
 int licznik = 1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
-
+int state = 0;
+int godzina,minuta;
 uint8_t BCD2DEC(uint8_t data){
 	return (data>>4)*10+(data&0x0f);
 }
@@ -61,10 +62,46 @@ void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_
 //////////////////////////////////////////////////////////////////////////////
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET)
+	if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET) && (state==0))
 	{
-		setRTC(date,month,year4digit,hour+1,min,sec);
-		for(int i=0;i<7000000;i++);
+		state=1;
+		minuta=(int)min;
+		godzina=(int)hour;
+		for(int i=0;i<1000000;i++);
+	}
+	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET) && (state==1))
+	{
+		if(godzina==23)
+			godzina=0;
+		else godzina++;
+		for(int i=0;i<1000000;i++);
+	}
+	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6) == GPIO_PIN_SET) && (state==1))
+	{
+		if(minuta==59)
+			minuta=0;
+		else minuta++;
+		for(int i=0;i<1000000;i++);
+	}
+	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET) && (state==1))
+	{
+		if(godzina==0)
+			godzina=23;
+		else godzina--;
+		for(int i=0;i<1000000;i++);
+	}
+	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET) && (state==1))
+	{
+		if(minuta==0)
+			minuta=59;
+		else minuta--;
+		for(int i=0;i<1000000;i++);
+	}
+	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET) && (state==1))
+	{
+		setRTC(date,month,year4digit,godzina,minuta,sec);
+		state=0;
+		for(int i=0;i<1000000;i++);
 	}
 }
 //dziala przesuwanie do przodu godziny
@@ -73,7 +110,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM3)
 	{
-		if (option==0){
 			getRTC();
 			uint8_t h1=hour/10;
 			uint8_t h2 = hour%10;
@@ -141,7 +177,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		    	licznik=1;
 		    	break;
 			}
-	}
+
 	}
 	else if (htim->Instance == TIM4)
 		{
