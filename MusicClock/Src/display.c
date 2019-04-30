@@ -57,7 +57,6 @@ void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_
 	data_RTC[7] = DEC2BCD(syear-2000);   //set year
 
 	HAL_I2C_Master_Transmit(&hi2c1,0xD0,data_RTC,8,50);
-	HAL_Delay(100);
 }
 //////////////////////////////////////////////////////////////////////////////
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -65,6 +64,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET)
 	{
 		setRTC(date,month,year4digit,hour+1,min,sec);
+		for(int i=0;i<7000000;i++);
 	}
 }
 //dziala przesuwanie do przodu godziny
@@ -148,4 +148,3 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			playSong();
 		}
 }
-

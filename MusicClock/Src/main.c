@@ -152,7 +152,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  //setRTC (5,04,2019,13,52,0);
+  setRTC (30,04,2019,16,52,0);
 
   CS43_Init(hi2c1, MODE_ANALOG);
   CS43_SetVolume(75);
@@ -185,7 +185,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 //setRTC (7,04,2019,19,53,0);
+	 //setRTC (7,04,2019,20,04,0);
   }
   /* USER CODE END 3 */
 }
