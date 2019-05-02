@@ -62,49 +62,60 @@ void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_
 //////////////////////////////////////////////////////////////////////////////
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET) && (state==0))
-	{
-		state=1;
-		minuta=(int)min;
-		godzina=(int)hour;
-		for(int i=0;i<1000000;i++);
+
+	if(state==0){
+		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
+		{
+			state=1;
+			minuta=(int)min;
+			godzina=(int)hour;
+			for(int i=0;i<1000000;i++);
+		}
 	}
-	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET) && (state==1))
-	{
-		if(godzina==23)
-			godzina=0;
-		else godzina++;
-		for(int i=0;i<1000000;i++);
+	else if(state==1){
+		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
+		{
+			if(godzina==23)
+				godzina=0;
+			else godzina++;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
+		{
+			if(godzina==0)
+				godzina=23;
+			else godzina--;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
+		{
+				state=2;
+				for(int i=0;i<1000000;i++);
+		}
 	}
-	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6) == GPIO_PIN_SET) && (state==1))
-	{
-		if(minuta==59)
-			minuta=0;
-		else minuta++;
-		for(int i=0;i<1000000;i++);
-	}
-	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET) && (state==1))
-	{
-		if(godzina==0)
-			godzina=23;
-		else godzina--;
-		for(int i=0;i<1000000;i++);
-	}
-	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET) && (state==1))
-	{
-		if(minuta==0)
-			minuta=59;
-		else minuta--;
-		for(int i=0;i<1000000;i++);
-	}
-	else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET) && (state==1))
-	{
-		setRTC(date,month,year4digit,godzina,minuta,sec);
-		state=0;
-		for(int i=0;i<1000000;i++);
+	else if(state==2){
+		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
+		{
+			if(minuta==59)
+				minuta=0;
+			else minuta++;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
+		{
+			if(minuta==0)
+				minuta=59;
+			else minuta--;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
+		{
+			setRTC(date,month,year4digit,godzina,minuta,sec);
+			state=0;
+			for(int i=0;i<1000000;i++);
+		}
 	}
 }
-//dziala przesuwanie do przodu godziny
 ///////////////////////////////////////////////////////////////////////////
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
