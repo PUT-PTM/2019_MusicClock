@@ -2,10 +2,11 @@
 #include "stm32f4xx_it.h"
 
 const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
-int licznik = 1;
+int licznik = 1, licznikBudzik=1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
 int state = 0;
-int godzina,minuta,budzikgodzina=0,budzikminuta=0;
+int wyswietlanieState=0;
+int godzina,minuta,budzikgodzina,budzikminuta;
 uint8_t BCD2DEC(uint8_t data){
 	return (data>>4)*10+(data&0x0f);
 }
@@ -62,8 +63,9 @@ void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_
 //////////////////////////////////////////////////////////////////////////////
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-
-	if(state==0){
+	switch(state){
+	case 0:{
+		wyswietlanieState=0;
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
 			state=1;
@@ -76,33 +78,34 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			state=3;
 			for(int i=0;i<1000000;i++);
 		}
+		break;
 	}
 	//ustawianie godziny
-	else if(state==1){
-		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
-		{
+	case 1:{
+		wyswietlanieState=0;
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET){
 			if(godzina==23)
 				godzina=0;
 			else godzina++;
 			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
-		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
-		{
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)){
 			if(godzina==0)
 				godzina=23;
 			else godzina--;
 			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
-		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
-		{
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)){
 			state=2;
 			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
+		break;
 	}
-	else if(state==2){
+	case 2:{
+		wyswietlanieState=0;
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
 			if(minuta==59)
@@ -124,9 +127,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			state=0;
 			for(int i=0;i<1000000;i++);
 		}
+		break;
 	}
 	//ustawianie budzika
-	else if(state==3){
+	case 3:{
+		wyswietlanieState=2;
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
 			if(budzikgodzina==23)
@@ -146,8 +151,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			state=4;
 			for(int i=0;i<1000000;i++);
 		}
+		break;
 	}
-	else if(state==4){
+	case 4:{
+		wyswietlanieState=2;
 			if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 			{
 				if(budzikminuta==59)
@@ -167,13 +174,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 				state=0;
 				for(int i=0;i<1000000;i++);
 			}
+			break;
 		}
+	}
 }
 ///////////////////////////////////////////////////////////////////////////
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM3)
 	{
+		switch(wyswietlanieState){
+		case 0:{
 			getRTC();
 			uint8_t h1=hour/10;
 			uint8_t h2 = hour%10;
@@ -241,6 +252,78 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		    	licznik=1;
 		    	break;
 			}
+			break;
+		}
+		case 2:{
+			int h1=budzikgodzina/10;
+			int h2 = budzikgodzina%10;
+			int m1=budzikminuta/10;
+			int m2 = budzikminuta%10;
+			DISP_1_OFF;
+			DISP_2_OFF;
+			DISP_3_OFF;
+			DISP_4_OFF;
+			DISP_VAL_NULL;
+			switch(licznikBudzik){
+					case 1:
+						DISP_1_ON;
+						switch (h1) {
+						case 0: DISP_VAL_0; break;
+						case 1: DISP_VAL_1; break;
+						case 2: DISP_VAL_2; break;
+					    		}
+					    		licznikBudzik++;
+					    		break;
+					    case 2:
+					    	DISP_2_ON;
+					    	switch (h2) {
+					    	case 0: DISP_VAL_0; break;
+					    	case 1: DISP_VAL_1; break;
+					    	case 2: DISP_VAL_2; break;
+					    	case 3: DISP_VAL_3; break;
+					    	case 4: DISP_VAL_4; break;
+					    	case 5: DISP_VAL_5; break;
+					    	case 6: DISP_VAL_6; break;
+					    	case 7: DISP_VAL_7; break;
+					    	case 8: DISP_VAL_8; break;
+					    	case 9: DISP_VAL_9; break;
+					    	}
+					    	DISP_DOT;
+					    	licznikBudzik++;
+					    	break;
+					    case 3:
+					    	DISP_3_ON;
+					    	switch (m1) {
+					    	case 0: DISP_VAL_0; break;
+					    	case 1: DISP_VAL_1; break;
+					    	case 2: DISP_VAL_2; break;
+					    	case 3: DISP_VAL_3; break;
+					    	case 4: DISP_VAL_4; break;
+					    	case 5: DISP_VAL_5; break;
+					    	case 6: DISP_VAL_6; break;
+					    	}
+					    	licznikBudzik++;
+					    	break;
+					    case 4:
+					    	DISP_4_ON;
+					    	switch (m2) {
+					    	case 0: DISP_VAL_0; break;
+					    	case 1: DISP_VAL_1; break;
+					    	case 2: DISP_VAL_2; break;
+					    	case 3: DISP_VAL_3; break;
+					    	case 4: DISP_VAL_4; break;
+					    	case 5: DISP_VAL_5; break;
+					    	case 6: DISP_VAL_6; break;
+					    	case 7: DISP_VAL_7; break;
+					    	case 8: DISP_VAL_8; break;
+					    	case 9: DISP_VAL_9; break;
+					    	}
+					    	licznikBudzik=1;
+					    	break;
+			}
+			break;
+		}
+		}
 
 	}
 	else if (htim->Instance == TIM4)
