@@ -5,7 +5,7 @@ const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
 int licznik = 1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
 int state = 0;
-int godzina,minuta;
+int godzina,minuta,budzikgodzina=0,budzikminuta=0;
 uint8_t BCD2DEC(uint8_t data){
 	return (data>>4)*10+(data&0x0f);
 }
@@ -71,13 +71,20 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			godzina=(int)hour;
 			for(int i=0;i<1000000;i++);
 		}
+		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
+		{
+			state=3;
+			for(int i=0;i<1000000;i++);
+		}
 	}
+	//ustawianie godziny
 	else if(state==1){
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
 			if(godzina==23)
 				godzina=0;
 			else godzina++;
+			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
 		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
@@ -85,12 +92,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if(godzina==0)
 				godzina=23;
 			else godzina--;
+			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
 		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
 		{
-				state=2;
-				for(int i=0;i<1000000;i++);
+			state=2;
+			setRTC(date,month,year4digit,godzina,minuta,sec);
+			for(int i=0;i<1000000;i++);
 		}
 	}
 	else if(state==2){
@@ -99,6 +108,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if(minuta==59)
 				minuta=0;
 			else minuta++;
+			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
 		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
@@ -106,15 +116,58 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if(minuta==0)
 				minuta=59;
 			else minuta--;
+			setRTC(date,month,year4digit,godzina,minuta,sec);
 			for(int i=0;i<1000000;i++);
 		}
 		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
 		{
-			setRTC(date,month,year4digit,godzina,minuta,sec);
 			state=0;
 			for(int i=0;i<1000000;i++);
 		}
 	}
+	//ustawianie budzika
+	else if(state==3){
+		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
+		{
+			if(budzikgodzina==23)
+				budzikgodzina=0;
+			else budzikgodzina++;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
+		{
+			if(budzikgodzina==0)
+				budzikgodzina=23;
+			else budzikgodzina--;
+			for(int i=0;i<1000000;i++);
+		}
+		else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
+		{
+			state=4;
+			for(int i=0;i<1000000;i++);
+		}
+	}
+	else if(state==4){
+			if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
+			{
+				if(budzikminuta==59)
+					budzikminuta=0;
+				else budzikminuta++;
+				for(int i=0;i<1000000;i++);
+			}
+			else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
+			{
+				if(budzikminuta==0)
+					budzikminuta=59;
+				else budzikminuta--;
+				for(int i=0;i<1000000;i++);
+			}
+			else if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET))
+			{
+				state=0;
+				for(int i=0;i<1000000;i++);
+			}
+		}
 }
 ///////////////////////////////////////////////////////////////////////////
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
