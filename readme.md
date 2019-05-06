@@ -6,8 +6,11 @@ Clock with alarm option - now you can be woken up everyday by your favorite musi
 
 ## Tools
 8-segment display
+
 2x4 tact switch matrix
+
 RTC Module
+
 SD card reader module
 ## How to run
 
