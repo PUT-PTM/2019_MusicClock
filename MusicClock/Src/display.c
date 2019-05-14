@@ -5,7 +5,7 @@ const uint8_t daysInMonth [] PROGMEM = {31,28,31,30,31,30,31,31,30,31,30,31};
 int displayCounter = 1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
 int state = 0, displayState=0;
-int godzina,minuta,budzikgodzina,budzikminuta;
+int godzina,minuta,budzikgodzina,budzikminuta,timerValue=0,temp_flag=1,flash=0;
 uint8_t BCD2DEC(uint8_t data){
 	return (data>>4)*10+(data&0x0f);
 }
@@ -70,6 +70,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		displayState=0;
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
+			flash=1;
 			state=1;
 			minuta=(int)min;
 			godzina=(int)hour;
@@ -77,6 +78,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		}
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET))
 		{
+			flash=1;
 			state=3;
 			displayState=2;
 			for(int i=0;i<1000000;i++);
@@ -84,7 +86,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		break;
 	//ustawianie godziny
 	case 1:
-		displayState=0;
+
 		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET){
 			if(godzina==23)
 				godzina=0;
@@ -106,7 +108,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		}
 		break;
 	case 2:
-		displayState=0;
+
 		if((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET))
 		{
 			if(minuta==59)
@@ -127,6 +129,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 			state=0;
 			for(int i=0;i<1000000;i++);
+			flash=0;
 		}
 		break;
 	//ustawianie budzika
@@ -172,6 +175,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 			state=0;
 			for(int i=0;i<1000000;i++);
+			flash=0;
 		}
 		break;
 	}
@@ -181,16 +185,31 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance == TIM3)
 	{
+		timerValue++;
+		if(timerValue>1500) timerValue=0;
 		getRTC();
 		uint8_t h1,h2,m1,m2;
 		switch(displayState){
 		case 0:
+			if(flash==1){
+				if(timerValue>300)
+					temp_flag=1;
+				else temp_flag=0;
+			}
+
 			h1=hour/10;
 			h2 = hour%10;
 			m1=min/10;
 			m2 = min%10;
 			break;
 		case 2:
+			if(flash==1){
+				if(timerValue>300)
+					temp_flag=1;
+				else temp_flag=0;
+			}
+
+
 			h1=budzikgodzina/10;
 			h2 = budzikgodzina%10;
 			m1=budzikminuta/10;
@@ -202,6 +221,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			DISP_3_OFF;
 			DISP_4_OFF;
 			DISP_VAL_NULL;
+			if(temp_flag==1){
 			switch(displayCounter){
 			case 1:
 				DISP_1_ON;
@@ -258,6 +278,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		    	}
 		    	displayCounter=1;
 		    	break;
+			}
 			}
 	}
 	else if (htim->Instance == TIM4)

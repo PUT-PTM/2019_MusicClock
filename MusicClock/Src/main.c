@@ -167,11 +167,11 @@ int main(void)
   		dataI2S[i*2 + 1] =(mySinValue )*8000; //Left data  (1 3 5 7 9 11 13)
   	}
 
- // HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
+  HAL_I2S_Transmit_DMA(&hi2s3, (uint16_t *)dataI2S, sample_N*2);
   HAL_TIM_Base_Start_IT(&htim3);
 
 
-  if ((fresult = f_mount(&FatFs, "", 0))== FR_OK){HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12); }////////////////////////////
+  fresult = f_mount(&FatFs, "", 0);
   htim2.Instance->ARR = 49999; //Prze³adowanie z czêstotliwociı 20Hz (debouncing)
 
   map_filenames();
@@ -533,12 +533,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA0 PA1 PA2 PA3 
-                           PA5 PA7 PA8 PA9 
-                           PA10 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3 
-                          |GPIO_PIN_5|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9 
-                          |GPIO_PIN_10;
+  /*Configure GPIO pins : PA0 PA1 PA2 PA5 
+                           PA6 PA7 PA8 PA9 
+                           PA10 PA13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_5 
+                          |GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9 
+                          |GPIO_PIN_10|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -566,9 +566,6 @@ static void MX_GPIO_Init(void)
 
   HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI2_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
