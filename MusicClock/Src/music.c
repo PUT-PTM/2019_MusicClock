@@ -11,6 +11,7 @@ int32_t sChunkSize = 0;
 int32_t hChunkSize = 0;
 
 int16_t fileNamesSize =0;
+DAC_HandleTypeDef hdac;
 
 void choose(){
 	if(sampleRate==44100) { htim4.Instance->ARR = 951; }
@@ -50,6 +51,13 @@ void startSong(char* fileName){
 			hChunkSize += 8;
 			fresult = f_lseek(&file, f_tell(&file) + hChunkSize );
 		}
+		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 0);
+			HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
+
+			//W��czanie timera
+			__HAL_TIM_SetCounter(&htim4, 0);			//Ustawienie licznika na 0
+			__HAL_TIM_ENABLE_IT(&htim4, TIM_IT_UPDATE); //Aktywowanie przerwa�
+			HAL_TIM_Base_Start_IT(&htim4);				//Uruchomienie licznika
 	}
 }
 void changeFile(int8_t changeValue){
@@ -65,47 +73,62 @@ void changeFile(int8_t changeValue){
 	startSong(currentFileName);
 }
 void playSong() {
+
 	if (!f_eof(&file))
-	{
-		if(audioBits == 16) {
-			fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
-			audioBuffer16 = (double)audioBuffer16 / 60.0;
-			HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16, sample_N*2);
+		{
+			if(audioBits == 16) {
+				fresult = f_read(&file, &audioBuffer16, 2, &bytes_read);
+				audioBuffer16 = (double)audioBuffer16 / 60.0;
+				HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, audioBuffer16);
+				HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+			}
+			else if (audioBits == 8) {
+				fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
+				audioBuffer16 = (double)audioBuffer8 / 60.0;
+				HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, audioBuffer16);
+				HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+			}
 		}
-		else if (audioBits == 8) {
-			fresult = f_read(&file, &audioBuffer8, 1, &bytes_read);
-			audioBuffer16 = (double)audioBuffer8 / 60.0;
-			HAL_I2S_Transmit_DMA(&hi2s3, audioBuffer16, sample_N*2);
+		else
+		{
+
+			//Zatrzymanie DAC
+			HAL_DAC_Stop(&hdac, DAC_CHANNEL_1);
+			HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 0);
+
+			//Wyłączanie timera
+			__HAL_TIM_DISABLE_IT(&htim4, TIM_IT_UPDATE); //Dezaktywowanie przerwań
+			HAL_TIM_Base_Stop(&htim4);			         //Zatrzymanie licznika
+			__HAL_TIM_SetCounter(&htim4, 0);	         //Ustawienie licznika na 0
+
+			fresult = f_close(&file);
+
+			changeFile(1);
 		}
-	}
-	else
-	{
-		fresult = f_close(&file);
-		changeFile(1);
-	}
 }
 void map_filenames()
 {
 	const char* path = "/";
 	DIR dir;
 	FILINFO fno;
-
 	fresult = f_opendir(&dir, path);
 	if (fresult == FR_OK) {
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	    for (;;) {
 	        fresult = f_readdir(&dir, &fno);
 	        if (fresult != FR_OK || fno.fname[0] == 0) { //B³ıd
-	        	if(fresult!= FR_OK) HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+	        	if(fresult!= FR_OK) HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
 				break;
 			}
-	        if (!(fno.fattrib & AM_DIR) && strstr(fno.fname,".WAV") != NULL) {
-				strcpy(fileNames[fileNamesSize], fno.fname);
+	        else if (!(fno.fattrib & AM_DIR) && strstr(fno.fname,".WAV") != NULL) {
+	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+	        	strcpy(fileNames[fileNamesSize], fno.fname);
 				fileNamesSize++;
 	        }
 	    }
 	}
 	else {
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	}
 	f_closedir(&dir);
 }

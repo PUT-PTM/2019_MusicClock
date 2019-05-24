@@ -6,6 +6,8 @@
 C_SRCS += \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c \
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c \
@@ -28,6 +30,8 @@ C_SRCS += \
 OBJS += \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o \
@@ -50,6 +54,8 @@ OBJS += \
 C_DEPS += \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.d \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d \
@@ -75,7 +81,7 @@ Drivers/STM32F4xx_HAL_Driver/Src/%.o: ../Drivers/STM32F4xx_HAL_Driver/Src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"D:/Studia/Semestr 4/PTM/2019_MusicClock/MusicClock/Inc" -I"D:/Studia/Semestr 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc" -I"D:/Studia/Semestr 4/PTM/2019_MusicClock/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"D:/Studia/Semestr 4/PTM/2019_MusicClock/MusicClock/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Studia/Semestr 4/PTM/2019_MusicClock/MusicClock/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F407xx -I"C:/Users/Ania/Downloads/2019_MusicClock1/MusicClock/Inc" -I"C:/Users/Ania/Downloads/2019_MusicClock1/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Ania/Downloads/2019_MusicClock1/MusicClock/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Ania/Downloads/2019_MusicClock1/MusicClock/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Ania/Downloads/2019_MusicClock1/MusicClock/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

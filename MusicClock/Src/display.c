@@ -6,6 +6,7 @@ int displayCounter = 1;
 static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
 int state = 0, displayState=0;
 int godzina,minuta,budzikgodzina,budzikminuta,timerValue=0,temp_flag=1,flash=0;
+int piesek=0;
 uint8_t BCD2DEC(uint8_t data){
 	return (data>>4)*10+(data&0x0f);
 }
@@ -183,11 +184,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+
 	if(htim->Instance == TIM3)
 	{
 		timerValue++;
-		if(timerValue>1500) timerValue=0;
-		getRTC();
+		if(timerValue>1500){
+			timerValue=0;
+			getRTC();
+	}
+
 		uint8_t h1,h2,m1,m2;
 		switch(displayState){
 		case 0:
@@ -281,8 +286,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			}
 			}
 	}
-	else if (htim->Instance == TIM4)
+	if (htim->Instance == TIM4)
 		{
 			playSong();
 		}
+
 }
