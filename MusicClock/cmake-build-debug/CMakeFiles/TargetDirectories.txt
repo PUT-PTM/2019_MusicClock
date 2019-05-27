@@ -1,0 +1,4 @@
+D:/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir
+D:/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/UPLOAD.dir
+D:/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/rebuild_cache.dir

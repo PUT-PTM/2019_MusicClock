@@ -63,22 +63,16 @@
                                               GPIO_PIN_RESET)
 
 #define DISP_DOT  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET)
-#define pgm_read_byte(x) (*(x))
 
 //variables
-uint8_t hour,min,sec,date,month,year2digit,day; //rtc
-uint8_t data_RTC[8];
-uint16_t year4digit;
-uint8_t BCD2DEC(uint8_t data);
-uint8_t DEC2BCD(uint8_t data);
-uint8_t dayOfTheWeek(int thn,int bln,int tgl);
-int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
-I2C_HandleTypeDef hi2c1;
-I2S_HandleTypeDef hi2s3;
-DMA_HandleTypeDef hdma_spi3_tx;
-SPI_HandleTypeDef hspi1;
-TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim4;
+static uint8_t hour,min,sec,date,month,year2digit,day; //rtc
+static uint8_t data_RTC[8];
+static uint16_t year4digit;
+static uint8_t BCD2DEC(uint8_t data);
+static uint8_t DEC2BCD(uint8_t data);
+static uint8_t dayOfTheWeek(int thn,int bln,int tgl);
+static int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
+
 
 //function prototypes
 void vprint(const char *fmt,va_list argp);

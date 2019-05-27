@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2fb2fac9-b4e3-4bbd-8dee-b576fa6f03da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MusicClock/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/MusicClock.hex" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/MusicClock.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/main.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/main.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_hal_msp.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_hal_msp.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_it.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_it.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/subdir.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/system_stm32f4xx.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/system_stm32f4xx.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/objects.list" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/objects.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/output.map" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/output.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/sources.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/sources.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/startup/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/startup/subdir.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Inc/stm32f4xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Inc/stm32f4xx_hal_conf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/MusicClock.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/MusicClock.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/MusicClock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/MusicClock.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Src/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/display.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Src/music.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/music.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Src/stm32f4xx_hal_msp.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/stm32f4xx_hal_msp.c" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MusicClock/Src/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicClock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicClock" type="462c0819:PsiDirectoryNode" />
+              <item name="Src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fb2fac9-b4e3-4bbd-8dee-b576fa6f03da" name="Default Changelist" comment="" />
+      <created>1558945238215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558945238215</updated>
+      <workItem from="1558945241890" duration="64000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="64000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MusicClock/Src/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510" />
+      </provider>
+    </entry>
+  </component>
+</project>

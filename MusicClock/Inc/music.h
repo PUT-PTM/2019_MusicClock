@@ -12,26 +12,28 @@
 #define PI 3.14159f
 #define F_SAMPLE 44100.0f
 #define F_OUT 1500.0f
-uint16_t sample_N;
-TIM_HandleTypeDef htim4;
-I2S_HandleTypeDef hi2s3;
-int16_t currentFile;
+static uint16_t sample_N;
+
+static int16_t currentFile;
 
 //pliki
 static FATFS FatFs; 	//uchwyt
-FRESULT fresult; 		//wynik operacji
-FIL file;				//otwarty plik
-UINT bytes_written;		//liczba zapisanych bajtow
-UINT bytes_read;		//liczba odczytanych bajtow
-char fileNames[64][13];
-char currentFileName[13];
-char dataDescription[4];
+static FRESULT fresult; 		//wynik operacji
+static FIL file;				//otwarty plik
+static UINT bytes_written;		//liczba zapisanych bajtow
+static UINT bytes_read;		//liczba odczytanych bajtow
+static char fileNames[64][13];
+static char currentFileName[13];
+static char dataDescription[4];
 
 //odtwarzacz
-uint8_t audioBuffer8;
-uint16_t audioBuffer16;
+static uint8_t audioBuffer8;
+static uint16_t audioBuffer16;
+
+static int16_t fileNamesSize =0;
 
 void choose();
 void startSong(char* fileName);
 void changeFile(int8_t changeValue);
 void playSong();
+void map_filenames();
