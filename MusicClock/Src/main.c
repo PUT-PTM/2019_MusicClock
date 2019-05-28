@@ -154,9 +154,9 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
     //setRTC(30,04,2019,19,25,0);
-
+    CS43_SetVolume(40);
     CS43_Init(hi2c1, MODE_I2S);
-    //CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
+    CS43_Enable_RightLeft(CS43_RIGHT_LEFT);
     CS43_Start();
 /*
     for (uint16_t i = 0; i < sample_N; i++) {
@@ -178,6 +178,7 @@ int main(void)
     htim2.Instance->ARR = 49999; //Prze³adowanie z czêstotliwociı 20Hz (debouncing)
 
     map_filenames();
+    //changeFile(1);
     strcpy(currentFileName, fileNames[currentFile]);
     startSong(currentFileName);
   /* USER CODE END 2 */
@@ -414,9 +415,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 84-1;
+  htim3.Init.Prescaler = 299;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 100-1;
+  htim3.Init.Period = 69;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -461,7 +462,7 @@ static void MX_TIM4_Init(void)
   htim4.Instance = TIM4;
   htim4.Init.Prescaler = 1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 975;
+  htim4.Init.Period = 700;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
