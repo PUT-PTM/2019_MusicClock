@@ -65,7 +65,7 @@
 #define DISP_DOT  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET)
 
 //variables
-static uint8_t hour,min,sec,date,month,year2digit,day; //rtc
+static uint8_t hour,min,sec,date,month,year2digit,day,alarmhour,alarmmin,alarmsec; //rtc
 static uint8_t data_RTC[8];
 static uint16_t year4digit;
 static uint8_t BCD2DEC(uint8_t data);
@@ -78,6 +78,7 @@ static int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
 void vprint(const char *fmt,va_list argp);
 void my_prinft(const char *fmt, ...);
 void getRTC();
-void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec);
+void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec,
+        uint8_t salarmhour, uint8_t salarmmin);
 
 

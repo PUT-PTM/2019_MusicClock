@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="MusicClock" targetName="MusicClock.elf" />
+      <config projectName="MusicClock" targetName="UPLOAD" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -10,44 +13,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb2fac9-b4e3-4bbd-8dee-b576fa6f03da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MusicClock/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/MusicClock.hex" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/MusicClock.hex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/main.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/main.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_hal_msp.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_hal_msp.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_it.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/stm32f4xx_it.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/subdir.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/Src/system_stm32f4xx.d" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/Src/system_stm32f4xx.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/objects.list" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/objects.list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/output.map" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/output.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/sources.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/sources.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Debug/startup/subdir.mk" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Debug/startup/subdir.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Inc/stm32f4xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Inc/stm32f4xx_hal_conf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/MusicClock.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/MusicClock.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/MusicClock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/MusicClock.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/2019_MusicClock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2019_MusicClock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/Inc/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Inc/display.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicClock/Src/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/display.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Src/music.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/music.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicClock/Src/stm32f4xx_hal_msp.c" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/Src/stm32f4xx_hal_msp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeASMCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/ASM.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/display.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/main.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/music.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/UPLOAD.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/UPLOAD.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/MusicClock.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/MusicClock.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicClock/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/MusicClock/cmake-build-debug/cmake_install.cmake" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/MusicClock/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,45 +97,107 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MusicClock/Src/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510" />
+            <state relative-caret-position="241">
+              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MusicClock/MusicClock.ioc">
+          <provider selected="true" editor-type-id="IocFileEditor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicClock/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicClock/Src/display.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="150" column="50" lean-forward="true" selection-start-line="150" selection-start-column="50" selection-end-line="150" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicClock/Inc/display.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicClock/Src/music.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get</find>
+      <find>month</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MusicClock/Inc/display.h" />
+        <option value="$PROJECT_DIR$/MusicClock/Src/display.c" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="259" />
+    <option name="y" value="19" />
+    <option name="width" value="1401" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicClock" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicClock" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
               <item name="MusicClock" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="2019_MusicClock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicClock" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019_MusicClock" type="462c0819:PsiDirectoryNode" />
               <item name="MusicClock" type="462c0819:PsiDirectoryNode" />
               <item name="Src" type="462c0819:PsiDirectoryNode" />
@@ -104,11 +206,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,6 +225,22 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="CMake Application.UPLOAD">
+    <configuration name="MusicClock.elf" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MusicClock" TARGET_NAME="MusicClock.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MusicClock" RUN_TARGET_NAME="MusicClock.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPLOAD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MusicClock" TARGET_NAME="UPLOAD" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.MusicClock.elf" />
+      <item itemvalue="CMake Application.UPLOAD" />
+    </list>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -133,44 +252,91 @@
       <option name="presentableId" value="Default" />
       <updated>1558945238215</updated>
       <workItem from="1558945241890" duration="64000" />
+      <workItem from="1559035486394" duration="1590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64000" />
+    <option name="totallyTimeSpent" value="1654000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18137652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MusicClock/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/MusicClock/Src/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510" />
+        <state relative-caret-position="241">
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicClock/Src/music.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicClock/Inc/display.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicClock/Src/display.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="150" column="50" lean-forward="true" selection-start-line="150" selection-start-column="50" selection-end-line="150" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicClock/MusicClock.ioc">
+      <provider selected="true" editor-type-id="IocFileEditor" />
     </entry>
   </component>
 </project>

@@ -19,7 +19,6 @@ static uint16_t date2days(uint16_t y, uint8_t m, uint8_t d);
 
 int state = 0, displayState = 0;
 int godzina, minuta, budzikgodzina, budzikminuta, timerValue = 0, temp_flag = 1, flash = 0;
-
 uint8_t BCD2DEC(uint8_t data) {
     return (data >> 4) * 10 + (data & 0x0f);
 }
@@ -50,20 +49,22 @@ uint8_t dayOfTheWeek(int thn, int bln, int tgl) {
 void getRTC() {
     data_RTC[0] = 0x00;
     HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 1, 50);
-    HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 7, 50);
+    HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 14, 50);
 
-    hour = BCD2DEC(data_RTC[2]);
-    min = BCD2DEC(data_RTC[1]);
-    sec = BCD2DEC(data_RTC[0]);
     year2digit = BCD2DEC(data_RTC[6]);
     month = BCD2DEC(data_RTC[5]);
     date = BCD2DEC(data_RTC[4]);
-
+    hour = BCD2DEC(data_RTC[2]);
+    min = BCD2DEC(data_RTC[1]);
+    sec = BCD2DEC(data_RTC[0]);
     year4digit = 2000 + (year2digit % 100);
     day = dayOfTheWeek(year2digit, month, date);
+    alarmhour = BCD2DEC(data_RTC[9]);
+    alarmmin = BCD2DEC(data_RTC[8]);
 }
 
-void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec) {
+void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec,
+            uint8_t salarmhour, uint8_t salarmmin) {
     uint8_t data_RTC[8];
     data_RTC[0] = 0x00;
     data_RTC[1] = DEC2BCD(ssec);//seconds
@@ -74,7 +75,10 @@ void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_
     data_RTC[6] = DEC2BCD(smonth); //set month
     data_RTC[7] = DEC2BCD(syear - 2000);   //set year
 
-    HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 8, 50);
+    data_RTC[9] = DEC2BCD(salarmmin); //set month
+    data_RTC[10] = DEC2BCD(salarmhour);
+
+    HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 11, 50);
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
@@ -102,17 +106,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 if (godzina == 23)
                     godzina = 0;
                 else godzina++;
-                setRTC(date, month, year4digit, godzina, minuta, sec);
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
                 if (godzina == 0)
                     godzina = 23;
                 else godzina--;
-                setRTC(date, month, year4digit, godzina, minuta, sec);
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 2;
-                setRTC(date, month, year4digit, godzina, minuta, sec);
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 8000000; i++);
             }
             break;
@@ -122,13 +126,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 if (minuta == 59)
                     minuta = 0;
                 else minuta++;
-                setRTC(date, month, year4digit, godzina, minuta, sec);
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
                 if (minuta == 0)
                     minuta = 59;
                 else minuta--;
-                setRTC(date, month, year4digit, godzina, minuta, sec);
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
@@ -143,11 +147,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 if (budzikgodzina == 23)
                     budzikgodzina = 0;
                 else budzikgodzina++;
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
                 if (budzikgodzina == 0)
                     budzikgodzina = 23;
                 else budzikgodzina--;
+                setRTC(date, month, year4digit, godzina, minuta, sec,budzikgodzina,budzikminuta);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 4;

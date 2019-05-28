@@ -7,11 +7,11 @@ ASM_FLAGS = -g
 
 ASM_DEFINES = -DSTM32F407xx -DUSE_HAL_DRIVER -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak))
 
-ASM_INCLUDES = -ID:\2019_MusicClock\MusicClock\Inc -ID:\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc -ID:\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy -ID:\2019_MusicClock\MusicClock\Drivers\CMSIS\Device\ST\STM32F4xx\Include -ID:\2019_MusicClock\MusicClock\Drivers\CMSIS\Include 
+ASM_INCLUDES = -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Inc -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\CMSIS\Include 
 
 C_FLAGS = -mcpu=cortex-m4  -mthumb -mthumb-interwork -ffunction-sections -fdata-sections     -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99 -g  
 
 C_DEFINES = -DSTM32F407xx -DUSE_HAL_DRIVER -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak))
 
-C_INCLUDES = -ID:\2019_MusicClock\MusicClock\Inc -ID:\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc -ID:\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy -ID:\2019_MusicClock\MusicClock\Drivers\CMSIS\Device\ST\STM32F4xx\Include -ID:\2019_MusicClock\MusicClock\Drivers\CMSIS\Include 
+C_INCLUDES = -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Inc -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\CMSIS\Include 
 

@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = C:\Users\Ania\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\191.6707.69\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = C:\Users\Ania\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\191.6707.69\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\2019_MusicClock\MusicClock
+CMAKE_SOURCE_DIR = C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\2019_MusicClock\MusicClock\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug
 
 # Utility rule file for UPLOAD.
 
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = D:\2019_MusicClock\MusicClock\cmake-build-debug
 include CMakeFiles/UPLOAD.dir/progress.make
 
 CMakeFiles/UPLOAD:
-	arm-none-eabi-gdb -iex "target remote tcp:127.0.0.1:3333" -iex "monitor program D:/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf" -iex "monitor reset init" -iex disconnect -iex quit
+	arm-none-eabi-gdb -iex "target remote tcp:127.0.0.1:3333" -iex "monitor program C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf" -iex "monitor reset init" -iex disconnect -iex quit
 
 UPLOAD: CMakeFiles/UPLOAD
 UPLOAD: CMakeFiles/UPLOAD.dir/build.make
@@ -70,6 +70,6 @@ CMakeFiles/UPLOAD.dir/clean:
 .PHONY : CMakeFiles/UPLOAD.dir/clean
 
 CMakeFiles/UPLOAD.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\2019_MusicClock\MusicClock D:\2019_MusicClock\MusicClock D:\2019_MusicClock\MusicClock\cmake-build-debug D:\2019_MusicClock\MusicClock\cmake-build-debug D:\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles\UPLOAD.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles\UPLOAD.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/UPLOAD.dir/depend
 
