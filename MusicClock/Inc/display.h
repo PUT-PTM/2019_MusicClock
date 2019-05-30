@@ -1,4 +1,5 @@
 #pragma once
+
 #include "stdio.h"
 #include "ff.h"
 #include "stdlib.h"
@@ -24,61 +25,62 @@
                                                GPIO_PIN_6 | GPIO_PIN_7 , \
                                                GPIO_PIN_SET)
 
-#define DISP_VAL_0	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_0    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_2 | GPIO_PIN_3 | \
                                               GPIO_PIN_4 | GPIO_PIN_5 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_1	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 , \
+#define DISP_VAL_1    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_2	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_2    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_3 | GPIO_PIN_4 | \
                                               GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_3	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_3    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_2 | GPIO_PIN_3 | \
                                               GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_4	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 | \
-    	                                       GPIO_PIN_5 | GPIO_PIN_6 , \
+#define DISP_VAL_4    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_1 | GPIO_PIN_2 | \
+                                               GPIO_PIN_5 | GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_5	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
+#define DISP_VAL_5    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
                                               GPIO_PIN_3 | GPIO_PIN_5 | \
                                               GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_6	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
+#define DISP_VAL_6    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_2 | \
                                               GPIO_PIN_3 | GPIO_PIN_4 | \
                                               GPIO_PIN_5 | GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_7	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_7    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_2 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_8	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_8    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_2 | GPIO_PIN_3 | \
                                               GPIO_PIN_4 | GPIO_PIN_5 | \
                                               GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
-#define DISP_VAL_9	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
+#define DISP_VAL_9    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0 | GPIO_PIN_1 | \
                                               GPIO_PIN_2 | GPIO_PIN_3 | \
                                               GPIO_PIN_5 | GPIO_PIN_6 , \
                                               GPIO_PIN_RESET)
 
-#define DISP_DOT  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET)
+#define DISP_DOT    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET)
 
 //variables
-static uint8_t hour,min,sec,date,month,year2digit,day,alarmhour,alarmmin,alarmsec; //rtc
-static uint8_t data_RTC[8];
-static uint16_t year4digit;
+static uint8_t hour, min, sec, date; //rtc
+static uint8_t data_RTC[10]={0,0,0,0,0,0,0,0,0,0};
+
+
 static uint8_t BCD2DEC(uint8_t data);
+
 static uint8_t DEC2BCD(uint8_t data);
-static uint8_t dayOfTheWeek(int thn,int bln,int tgl);
+
 static int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
 
 
 //function prototypes
-void vprint(const char *fmt,va_list argp);
-void my_prinft(const char *fmt, ...);
+
 void getRTC();
-void setRTC(uint8_t sdate, uint8_t smonth, uint16_t syear, uint8_t shour, uint8_t smin, uint8_t ssec,
-        uint8_t salarmhour, uint8_t salarmmin);
+
+void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t budzikminuta, uint8_t budzikgodzina);
 
 

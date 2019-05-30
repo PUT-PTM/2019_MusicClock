@@ -1,4 +1,5 @@
 #pragma once
+
 #include "stdio.h"
 #include "ff.h"
 #include "stdlib.h"
@@ -17,23 +18,26 @@ static uint16_t sample_N;
 static int16_t currentFile;
 
 //pliki
-static FATFS FatFs; 	//uchwyt
-static FRESULT fresult; 		//wynik operacji
-static FIL file;				//otwarty plik
-static UINT bytes_written;		//liczba zapisanych bajtow
-static UINT bytes_read;		//liczba odczytanych bajtow
+static FATFS FatFs;    //uchwyt
+static FRESULT fresult;        //wynik operacji
+static FIL file;                //otwarty plik
+static UINT bytes_read;        //liczba odczytanych bajtow
 static char fileNames[64][13];
 static char currentFileName[13];
-static char dataDescription[4];
+
 
 //odtwarzacz
 static uint8_t audioBuffer8;
 static uint16_t audioBuffer16;
 
-static int16_t fileNamesSize =0;
+static int16_t fileNamesSize = 0;
 
 void choose();
-void startSong(char* fileName);
+
+void startSong(char *fileName);
+
 void changeFile(int8_t changeValue);
+
 void playSong();
+
 void map_filenames();
