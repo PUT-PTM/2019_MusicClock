@@ -27,11 +27,11 @@ void getRTC() {
     HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 1, 50);
     HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 11, 50);
 
-    hour = BCD2DEC(data_RTC[2]);
-    min = BCD2DEC(data_RTC[1]);
+    godzina = BCD2DEC(data_RTC[2]);
+    minuta = BCD2DEC(data_RTC[1]);
     sec = BCD2DEC(data_RTC[0]);
-    alarmHour = BCD2DEC(data_RTC[9]);
-    alarmMinute = BCD2DEC(data_RTC[8]);
+    agodzina = BCD2DEC(data_RTC[9]);
+    aminuta = BCD2DEC(data_RTC[8]);
 }
 
 void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t alarmHour, uint8_t alarmMinute) {
@@ -46,10 +46,10 @@ void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t alarmHour, uint8_
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-    minuta = (int) min;
-    godzina = (int) hour;
-    aminuta = (int) alarmMinute;
-    agodzina = (int) alarmHour;
+    //minuta = (int) min;
+    //godzina = (int) hour;
+    //aminuta = (int) alarmMinute;
+    //agodzina = (int) alarmHour;
     switch (state) {
         case 0:
             displayState = 0;
@@ -153,7 +153,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM2) {
         getRTC();
-        if(alarmMinute==min&&alarmHour==hour){
+        if(aminuta==minuta&&agodzina==godzina){
             ifalarm=1;
         }
         else ifalarm=0;
@@ -170,10 +170,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                     else temp_flag = 0;
                 }
 
-                h1 = hour / 10;
-                h2 = hour % 10;
-                m1 = min / 10;
-                m2 = min % 10;
+                h1 = godzina / 10;
+                h2 = godzina % 10;
+                m1 = minuta / 10;
+                m2 = minuta % 10;
                 break;
             case 2:
                 if (flash == 1) {
@@ -183,10 +183,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 }
 
 
-                h1 = alarmHour / 10;
-                h2 = alarmHour % 10;
-                m1 = alarmMinute / 10;
-                m2 = alarmMinute % 10;
+                h1 = agodzina / 10;
+                h2 = agodzina % 10;
+                m1 = aminuta / 10;
+                m2 = aminuta % 10;
                 break;
         }
         DISP_1_OFF;
