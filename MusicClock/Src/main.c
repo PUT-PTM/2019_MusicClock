@@ -154,7 +154,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-    setRTC(19,32,0,19,32);
+    //setRTC(19,32,0,19,32);
     CS43_SetVolume(40);
     CS43_Init(hi2c1, MODE_I2S);
     CS43_Enable_RightLeft(CS43_RIGHT_LEFT);

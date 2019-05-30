@@ -1260,7 +1260,7 @@ LOAD c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none
                 0x08000000                g_pfnVectors
                 0x08000188                . = ALIGN (0x4)
 
-.text           0x08000188     0xadbc
+.text           0x08000188     0xadac
                 0x08000188                . = ALIGN (0x4)
  *(.text)
  .text          0x08000188       0x40 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
@@ -1728,292 +1728,292 @@ LOAD c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none
                 0x08009eb8       0x7a CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj
                 0x08009eb8                f_readdir
  *fill*         0x08009f32        0x2 
- .text.main     0x08009f34      0x108 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+ .text.main     0x08009f34       0xf8 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
                 0x08009f34                main
  .text.SystemClock_Config
-                0x0800a03c      0x100 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
-                0x0800a03c                SystemClock_Config
+                0x0800a02c      0x100 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a02c                SystemClock_Config
  .text.MX_I2C1_Init
-                0x0800a13c       0x5c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a12c       0x5c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_I2S3_Init
-                0x0800a198       0x5c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a188       0x5c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_SPI1_Init
-                0x0800a1f4       0x6c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a1e4       0x6c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_TIM2_Init
-                0x0800a260       0x9c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a250       0x9c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_TIM3_Init
-                0x0800a2fc       0x98 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a2ec       0x98 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_TIM4_Init
-                0x0800a394       0x9c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a384       0x9c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_DMA_Init
-                0x0800a430       0x40 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a420       0x40 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.MX_GPIO_Init
-                0x0800a470      0x1c4 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a460      0x1c4 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
  .text.Error_Handler
-                0x0800a634        0xc CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
-                0x0800a634                Error_Handler
+                0x0800a624        0xc CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+                0x0800a624                Error_Handler
  .text.startSong
-                0x0800a640       0x6c CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
-                0x0800a640                startSong
+                0x0800a630       0x6c CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+                0x0800a630                startSong
  .text.changeFile
-                0x0800a6ac       0x9c CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
-                0x0800a6ac                changeFile
+                0x0800a69c       0x9c CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+                0x0800a69c                changeFile
  .text.playSong
-                0x0800a748       0xa0 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
-                0x0800a748                playSong
+                0x0800a738       0xa0 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+                0x0800a738                playSong
  .text.map_filenames
-                0x0800a7e8       0xec CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
-                0x0800a7e8                map_filenames
+                0x0800a7d8       0xec CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+                0x0800a7d8                map_filenames
  .text.HAL_MspInit
-                0x0800a8d4       0x4c CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
-                0x0800a8d4                HAL_MspInit
+                0x0800a8c4       0x4c CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+                0x0800a8c4                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0800a920       0xb0 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
-                0x0800a920                HAL_I2C_MspInit
+                0x0800a910       0xb0 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+                0x0800a910                HAL_I2C_MspInit
  .text.HAL_I2S_MspInit
-                0x0800a9d0      0x14c CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
-                0x0800a9d0                HAL_I2S_MspInit
+                0x0800a9c0      0x14c CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+                0x0800a9c0                HAL_I2S_MspInit
  .text.HAL_SPI_MspInit
-                0x0800ab1c       0xa0 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
-                0x0800ab1c                HAL_SPI_MspInit
+                0x0800ab0c       0xa0 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+                0x0800ab0c                HAL_SPI_MspInit
  .text.HAL_TIM_Base_MspInit
-                0x0800abbc       0xc4 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
-                0x0800abbc                HAL_TIM_Base_MspInit
+                0x0800abac       0xc4 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+                0x0800abac                HAL_TIM_Base_MspInit
  .text.NMI_Handler
-                0x0800ac80        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ac80                NMI_Handler
+                0x0800ac70        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac70                NMI_Handler
  .text.HardFault_Handler
-                0x0800ac8c        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ac8c                HardFault_Handler
+                0x0800ac7c        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac7c                HardFault_Handler
  .text.MemManage_Handler
-                0x0800ac92        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ac92                MemManage_Handler
+                0x0800ac82        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac82                MemManage_Handler
  .text.BusFault_Handler
-                0x0800ac98        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ac98                BusFault_Handler
+                0x0800ac88        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac88                BusFault_Handler
  .text.UsageFault_Handler
-                0x0800ac9e        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ac9e                UsageFault_Handler
+                0x0800ac8e        0x6 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac8e                UsageFault_Handler
  .text.SVC_Handler
-                0x0800aca4        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800aca4                SVC_Handler
+                0x0800ac94        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ac94                SVC_Handler
  .text.DebugMon_Handler
-                0x0800acb0        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800acb0                DebugMon_Handler
+                0x0800aca0        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800aca0                DebugMon_Handler
  .text.PendSV_Handler
-                0x0800acbc        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800acbc                PendSV_Handler
+                0x0800acac        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800acac                PendSV_Handler
  .text.SysTick_Handler
-                0x0800acc8        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800acc8                SysTick_Handler
+                0x0800acb8        0xc CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800acb8                SysTick_Handler
  .text.EXTI0_IRQHandler
-                0x0800acd4        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800acd4                EXTI0_IRQHandler
+                0x0800acc4        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800acc4                EXTI0_IRQHandler
  .text.EXTI1_IRQHandler
-                0x0800ace2        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ace2                EXTI1_IRQHandler
+                0x0800acd2        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800acd2                EXTI1_IRQHandler
  .text.EXTI2_IRQHandler
-                0x0800acf0        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800acf0                EXTI2_IRQHandler
- *fill*         0x0800acfe        0x2 
+                0x0800ace0        0xe CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ace0                EXTI2_IRQHandler
+ *fill*         0x0800acee        0x2 
  .text.DMA1_Stream5_IRQHandler
-                0x0800ad00       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad00                DMA1_Stream5_IRQHandler
+                0x0800acf0       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800acf0                DMA1_Stream5_IRQHandler
  .text.EXTI9_5_IRQHandler
-                0x0800ad14       0x2a CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad14                EXTI9_5_IRQHandler
- *fill*         0x0800ad3e        0x2 
+                0x0800ad04       0x2a CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad04                EXTI9_5_IRQHandler
+ *fill*         0x0800ad2e        0x2 
  .text.TIM2_IRQHandler
-                0x0800ad40       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad40                TIM2_IRQHandler
+                0x0800ad30       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad30                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x0800ad54       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad54                TIM3_IRQHandler
+                0x0800ad44       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad44                TIM3_IRQHandler
  .text.TIM4_IRQHandler
-                0x0800ad68       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad68                TIM4_IRQHandler
+                0x0800ad58       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad58                TIM4_IRQHandler
  .text.I2C1_EV_IRQHandler
-                0x0800ad7c       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad7c                I2C1_EV_IRQHandler
+                0x0800ad6c       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad6c                I2C1_EV_IRQHandler
  .text.I2C1_ER_IRQHandler
-                0x0800ad90       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ad90                I2C1_ER_IRQHandler
+                0x0800ad80       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad80                I2C1_ER_IRQHandler
  .text.SPI1_IRQHandler
-                0x0800ada4       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800ada4                SPI1_IRQHandler
+                0x0800ad94       0x14 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ad94                SPI1_IRQHandler
  .text.EXTI15_10_IRQHandler
-                0x0800adb8       0x10 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
-                0x0800adb8                EXTI15_10_IRQHandler
+                0x0800ada8       0x10 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+                0x0800ada8                EXTI15_10_IRQHandler
  .text.SystemInit
-                0x0800adc8       0x5c CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
-                0x0800adc8                SystemInit
+                0x0800adb8       0x5c CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
+                0x0800adb8                SystemInit
  .text.Reset_Handler
-                0x0800ae24       0x50 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
-                0x0800ae24                Reset_Handler
+                0x0800ae14       0x50 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
+                0x0800ae14                Reset_Handler
  .text.Default_Handler
-                0x0800ae74        0x2 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
-                0x0800ae74                RTC_Alarm_IRQHandler
-                0x0800ae74                HASH_RNG_IRQHandler
-                0x0800ae74                TIM8_CC_IRQHandler
-                0x0800ae74                TIM1_CC_IRQHandler
-                0x0800ae74                DMA2_Stream5_IRQHandler
-                0x0800ae74                PVD_IRQHandler
-                0x0800ae74                SDIO_IRQHandler
-                0x0800ae74                TAMP_STAMP_IRQHandler
-                0x0800ae74                CAN2_RX1_IRQHandler
-                0x0800ae74                EXTI3_IRQHandler
-                0x0800ae74                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0800ae74                TIM1_UP_TIM10_IRQHandler
-                0x0800ae74                TIM8_UP_TIM13_IRQHandler
-                0x0800ae74                I2C3_ER_IRQHandler
-                0x0800ae74                I2C2_EV_IRQHandler
-                0x0800ae74                DMA1_Stream2_IRQHandler
-                0x0800ae74                CAN1_RX0_IRQHandler
-                0x0800ae74                FPU_IRQHandler
-                0x0800ae74                OTG_HS_WKUP_IRQHandler
-                0x0800ae74                CAN2_SCE_IRQHandler
-                0x0800ae74                DMA2_Stream2_IRQHandler
-                0x0800ae74                TIM6_DAC_IRQHandler
-                0x0800ae74                TIM1_BRK_TIM9_IRQHandler
-                0x0800ae74                DCMI_IRQHandler
-                0x0800ae74                CAN2_RX0_IRQHandler
-                0x0800ae74                DMA2_Stream3_IRQHandler
-                0x0800ae74                USART6_IRQHandler
-                0x0800ae74                USART3_IRQHandler
-                0x0800ae74                CAN1_RX1_IRQHandler
-                0x0800ae74                UART5_IRQHandler
-                0x0800ae74                DMA2_Stream0_IRQHandler
-                0x0800ae74                DMA1_Stream6_IRQHandler
-                0x0800ae74                DMA1_Stream1_IRQHandler
-                0x0800ae74                UART4_IRQHandler
-                0x0800ae74                RCC_IRQHandler
-                0x0800ae74                TIM8_BRK_TIM12_IRQHandler
-                0x0800ae74                Default_Handler
-                0x0800ae74                ADC_IRQHandler
-                0x0800ae74                DMA1_Stream7_IRQHandler
-                0x0800ae74                TIM7_IRQHandler
-                0x0800ae74                CAN2_TX_IRQHandler
-                0x0800ae74                TIM5_IRQHandler
-                0x0800ae74                DMA2_Stream7_IRQHandler
-                0x0800ae74                I2C3_EV_IRQHandler
-                0x0800ae74                RTC_WKUP_IRQHandler
-                0x0800ae74                ETH_WKUP_IRQHandler
-                0x0800ae74                SPI2_IRQHandler
-                0x0800ae74                OTG_HS_EP1_IN_IRQHandler
-                0x0800ae74                DMA1_Stream0_IRQHandler
-                0x0800ae74                CAN1_TX_IRQHandler
-                0x0800ae74                EXTI4_IRQHandler
-                0x0800ae74                FSMC_IRQHandler
-                0x0800ae74                ETH_IRQHandler
-                0x0800ae74                OTG_HS_EP1_OUT_IRQHandler
-                0x0800ae74                WWDG_IRQHandler
-                0x0800ae74                OTG_FS_WKUP_IRQHandler
-                0x0800ae74                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0800ae74                OTG_HS_IRQHandler
-                0x0800ae74                USART2_IRQHandler
-                0x0800ae74                I2C2_ER_IRQHandler
-                0x0800ae74                DMA2_Stream1_IRQHandler
-                0x0800ae74                CAN1_SCE_IRQHandler
-                0x0800ae74                FLASH_IRQHandler
-                0x0800ae74                DMA2_Stream4_IRQHandler
-                0x0800ae74                USART1_IRQHandler
-                0x0800ae74                OTG_FS_IRQHandler
-                0x0800ae74                SPI3_IRQHandler
-                0x0800ae74                DMA1_Stream4_IRQHandler
-                0x0800ae74                DMA2_Stream6_IRQHandler
-                0x0800ae74                DMA1_Stream3_IRQHandler
- *fill*         0x0800ae76        0x2 
+                0x0800ae64        0x2 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
+                0x0800ae64                RTC_Alarm_IRQHandler
+                0x0800ae64                HASH_RNG_IRQHandler
+                0x0800ae64                TIM8_CC_IRQHandler
+                0x0800ae64                TIM1_CC_IRQHandler
+                0x0800ae64                DMA2_Stream5_IRQHandler
+                0x0800ae64                PVD_IRQHandler
+                0x0800ae64                SDIO_IRQHandler
+                0x0800ae64                TAMP_STAMP_IRQHandler
+                0x0800ae64                CAN2_RX1_IRQHandler
+                0x0800ae64                EXTI3_IRQHandler
+                0x0800ae64                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0800ae64                TIM1_UP_TIM10_IRQHandler
+                0x0800ae64                TIM8_UP_TIM13_IRQHandler
+                0x0800ae64                I2C3_ER_IRQHandler
+                0x0800ae64                I2C2_EV_IRQHandler
+                0x0800ae64                DMA1_Stream2_IRQHandler
+                0x0800ae64                CAN1_RX0_IRQHandler
+                0x0800ae64                FPU_IRQHandler
+                0x0800ae64                OTG_HS_WKUP_IRQHandler
+                0x0800ae64                CAN2_SCE_IRQHandler
+                0x0800ae64                DMA2_Stream2_IRQHandler
+                0x0800ae64                TIM6_DAC_IRQHandler
+                0x0800ae64                TIM1_BRK_TIM9_IRQHandler
+                0x0800ae64                DCMI_IRQHandler
+                0x0800ae64                CAN2_RX0_IRQHandler
+                0x0800ae64                DMA2_Stream3_IRQHandler
+                0x0800ae64                USART6_IRQHandler
+                0x0800ae64                USART3_IRQHandler
+                0x0800ae64                CAN1_RX1_IRQHandler
+                0x0800ae64                UART5_IRQHandler
+                0x0800ae64                DMA2_Stream0_IRQHandler
+                0x0800ae64                DMA1_Stream6_IRQHandler
+                0x0800ae64                DMA1_Stream1_IRQHandler
+                0x0800ae64                UART4_IRQHandler
+                0x0800ae64                RCC_IRQHandler
+                0x0800ae64                TIM8_BRK_TIM12_IRQHandler
+                0x0800ae64                Default_Handler
+                0x0800ae64                ADC_IRQHandler
+                0x0800ae64                DMA1_Stream7_IRQHandler
+                0x0800ae64                TIM7_IRQHandler
+                0x0800ae64                CAN2_TX_IRQHandler
+                0x0800ae64                TIM5_IRQHandler
+                0x0800ae64                DMA2_Stream7_IRQHandler
+                0x0800ae64                I2C3_EV_IRQHandler
+                0x0800ae64                RTC_WKUP_IRQHandler
+                0x0800ae64                ETH_WKUP_IRQHandler
+                0x0800ae64                SPI2_IRQHandler
+                0x0800ae64                OTG_HS_EP1_IN_IRQHandler
+                0x0800ae64                DMA1_Stream0_IRQHandler
+                0x0800ae64                CAN1_TX_IRQHandler
+                0x0800ae64                EXTI4_IRQHandler
+                0x0800ae64                FSMC_IRQHandler
+                0x0800ae64                ETH_IRQHandler
+                0x0800ae64                OTG_HS_EP1_OUT_IRQHandler
+                0x0800ae64                WWDG_IRQHandler
+                0x0800ae64                OTG_FS_WKUP_IRQHandler
+                0x0800ae64                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0800ae64                OTG_HS_IRQHandler
+                0x0800ae64                USART2_IRQHandler
+                0x0800ae64                I2C2_ER_IRQHandler
+                0x0800ae64                DMA2_Stream1_IRQHandler
+                0x0800ae64                CAN1_SCE_IRQHandler
+                0x0800ae64                FLASH_IRQHandler
+                0x0800ae64                DMA2_Stream4_IRQHandler
+                0x0800ae64                USART1_IRQHandler
+                0x0800ae64                OTG_FS_IRQHandler
+                0x0800ae64                SPI3_IRQHandler
+                0x0800ae64                DMA1_Stream4_IRQHandler
+                0x0800ae64                DMA2_Stream6_IRQHandler
+                0x0800ae64                DMA1_Stream3_IRQHandler
+ *fill*         0x0800ae66        0x2 
  .text.__libc_init_array
-                0x0800ae78       0x48 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-init.o)
-                0x0800ae78                __libc_init_array
- .text.memcpy   0x0800aec0       0x16 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x0800aec0                memcpy
- .text.memset   0x0800aed6       0x10 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memset.o)
-                0x0800aed6                memset
- .text.strcpy   0x0800aee6       0x10 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strcpy.o)
-                0x0800aee6                strcpy
- .text.strstr   0x0800aef6       0x34 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strstr.o)
-                0x0800aef6                strstr
+                0x0800ae68       0x48 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-init.o)
+                0x0800ae68                __libc_init_array
+ .text.memcpy   0x0800aeb0       0x16 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0800aeb0                memcpy
+ .text.memset   0x0800aec6       0x10 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memset.o)
+                0x0800aec6                memset
+ .text.strcpy   0x0800aed6       0x10 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strcpy.o)
+                0x0800aed6                strcpy
+ .text.strstr   0x0800aee6       0x34 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strstr.o)
+                0x0800aee6                strstr
  *(.glue_7)
- .glue_7        0x0800af2a        0x0 linker stubs
+ .glue_7        0x0800af1a        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800af2a        0x0 linker stubs
+ .glue_7t       0x0800af1a        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x0800af2a        0x2 
- .eh_frame      0x0800af2c        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
+ *fill*         0x0800af1a        0x2 
+ .eh_frame      0x0800af1c        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
  *(.init)
- .init          0x0800af2c        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crti.o
-                0x0800af2c                _init
- .init          0x0800af30        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtn.o
+ .init          0x0800af1c        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crti.o
+                0x0800af1c                _init
+ .init          0x0800af20        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtn.o
  *(.fini)
- .fini          0x0800af38        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crti.o
-                0x0800af38                _fini
- .fini          0x0800af3c        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtn.o
-                0x0800af44                . = ALIGN (0x4)
-                0x0800af44                _etext = .
+ .fini          0x0800af28        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crti.o
+                0x0800af28                _fini
+ .fini          0x0800af2c        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtn.o
+                0x0800af34                . = ALIGN (0x4)
+                0x0800af34                _etext = .
 
-.vfp11_veneer   0x0800af44        0x0
- .vfp11_veneer  0x0800af44        0x0 linker stubs
+.vfp11_veneer   0x0800af34        0x0
+ .vfp11_veneer  0x0800af34        0x0 linker stubs
 
-.v4_bx          0x0800af44        0x0
- .v4_bx         0x0800af44        0x0 linker stubs
+.v4_bx          0x0800af34        0x0
+ .v4_bx         0x0800af34        0x0 linker stubs
 
-.iplt           0x0800af44        0x0
- .iplt          0x0800af44        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
+.iplt           0x0800af34        0x0
+ .iplt          0x0800af34        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
 
-.rodata         0x0800af44       0x4c
-                0x0800af44                . = ALIGN (0x4)
+.rodata         0x0800af34       0x4c
+                0x0800af34                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0800af44       0x1a CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj
- *fill*         0x0800af5e        0x2 
- .rodata        0x0800af60        0x1 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
- *fill*         0x0800af61        0x3 
- .rodata        0x0800af64        0x9 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+ .rodata        0x0800af34       0x1a CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj
+ *fill*         0x0800af4e        0x2 
+ .rodata        0x0800af50        0x1 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+ *fill*         0x0800af51        0x3 
+ .rodata        0x0800af54        0x9 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
  *(.rodata*)
- *fill*         0x0800af6d        0x3 
+ *fill*         0x0800af5d        0x3 
  .rodata.flagBitshiftOffset.7196
-                0x0800af70        0x8 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x0800af60        0x8 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .rodata.AHBPrescTable
-                0x0800af78       0x10 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
-                0x0800af78                AHBPrescTable
+                0x0800af68       0x10 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
+                0x0800af68                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800af88        0x8 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
-                0x0800af88                APBPrescTable
-                0x0800af90                . = ALIGN (0x4)
+                0x0800af78        0x8 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
+                0x0800af78                APBPrescTable
+                0x0800af80                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0800af90        0x8
-                0x0800af90                __exidx_start = .
+.ARM            0x0800af80        0x8
+                0x0800af80                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800af90        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_udivmoddi4.o)
-                0x0800af98                __exidx_end = .
+ .ARM.exidx     0x0800af80        0x8 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m\libgcc.a(_udivmoddi4.o)
+                0x0800af88                __exidx_end = .
 
-.rel.dyn        0x0800af98        0x0
- .rel.iplt      0x0800af98        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
+.rel.dyn        0x0800af88        0x0
+ .rel.iplt      0x0800af88        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
 
-.preinit_array  0x0800af98        0x0
-                0x0800af98                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800af88        0x0
+                0x0800af88                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800af98                PROVIDE (__preinit_array_end = .)
+                0x0800af88                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0800af98        0x4
-                0x0800af98                PROVIDE (__init_array_start = .)
+.init_array     0x0800af88        0x4
+                0x0800af88                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800af98        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
-                0x0800af9c                PROVIDE (__init_array_end = .)
+ .init_array    0x0800af88        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
+                0x0800af8c                PROVIDE (__init_array_end = .)
 
-.fini_array     0x0800af9c        0x4
+.fini_array     0x0800af8c        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800af9c        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
+ .fini_array    0x0800af8c        0x4 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x0800afa0                _sidata = LOADADDR (.data)
+                0x0800af90                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x14 load address 0x0800afa0
+.data           0x20000000       0x14 load address 0x0800af90
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -2037,12 +2037,12 @@ LOAD c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none
                 0x20000010                SystemCoreClock
                 0x20000014                . = ALIGN (0x4)
                 0x20000014                _edata = .
-                0x0800afb4                _siccmram = LOADADDR (.ccmram)
+                0x0800afa4                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000014        0x0 load address 0x0800afb4
+.igot.plt       0x20000014        0x0 load address 0x0800afa4
  .igot.plt      0x20000014        0x0 c:/progra~2/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x0800afb4
+.ccmram         0x10000000        0x0 load address 0x0800afa4
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sccmram = .
  *(.ccmram)
@@ -2353,7 +2353,7 @@ OUTPUT(MusicClock.elf elf32-littlearm)
  .debug_ranges  0x00001250       0x18 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
  .debug_ranges  0x00001268       0x20 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
 
-.debug_line     0x00000000     0xabf2
+.debug_line     0x00000000     0xabf1
  .debug_line    0x00000000      0x4d4 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
  .debug_line    0x000004d4      0x5fa CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .debug_line    0x00000ace      0x5aa CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
@@ -2370,12 +2370,12 @@ OUTPUT(MusicClock.elf elf32-littlearm)
  .debug_line    0x000077e4      0x663 CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj
  .debug_line    0x00007e47      0x672 CMakeFiles/MusicClock.elf.dir/Src/display.c.obj
  .debug_line    0x000084b9      0xfd0 CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj
- .debug_line    0x00009489      0x60c CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
- .debug_line    0x00009a95      0x497 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
- .debug_line    0x00009f2c      0x426 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x0000a352      0x591 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
- .debug_line    0x0000a8e3      0x259 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
- .debug_line    0x0000ab3c       0xb6 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
+ .debug_line    0x00009489      0x60b CMakeFiles/MusicClock.elf.dir/Src/main.c.obj
+ .debug_line    0x00009a94      0x497 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj
+ .debug_line    0x00009f2b      0x426 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x0000a351      0x591 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj
+ .debug_line    0x0000a8e2      0x259 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
+ .debug_line    0x0000ab3b       0xb6 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
 
 .debug_str      0x00000000     0x5c52
  .debug_str     0x00000000      0xb42 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj

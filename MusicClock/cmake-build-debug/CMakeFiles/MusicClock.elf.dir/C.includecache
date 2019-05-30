@@ -222,6 +222,10 @@ stm32f4xx_hal_tim_ex.h
 stm32f4xx_hal_def.h
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 
+../Inc/MY_CS43L22.h
+stm32f4xx_hal.h
+../Inc/stm32f4xx_hal.h
+
 ../Inc/diskio.h
 ff.h
 ../Inc/ff.h
@@ -378,11 +382,29 @@ stm32f4xx_hal_lptim.h
 
 ../Inc/stm32f4xx_it.h
 
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/display.c
-music.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/main.c
+main.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/main.h
+stdio.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/stdio.h
+ff.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/ff.h
+stdlib.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/stdlib.h
+string.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/string.h
+stdarg.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/stdarg.h
+pgmspace.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/pgmspace.h
+stdbool.h
+-
+MY_CS43L22.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/MY_CS43L22.h
+math.h
 -
 display.h
 C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/display.h
-stm32f4xx_it.h
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/stm32f4xx_it.h
+music.h
+C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/Src/music.h
 

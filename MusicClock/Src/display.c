@@ -143,7 +143,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
                 setRTC(godzina, minuta, sec, agodzina, aminuta);
-                for (int i = 0; i < 1000000; i++);
+                for (int i = 0; i < 8000000; i++);
                 flash = 0;
             }
             break;
