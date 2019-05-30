@@ -8,8 +8,6 @@ extern TIM_HandleTypeDef htim4;
 extern I2S_HandleTypeDef hi2s3;
 
 
-//extern DAC_HandleTypeDef hdac;
-
 void startSong(char *fileName) {
     if (fileNamesSize > 0) {
         fresult = f_open(&file, fileName, FA_READ);
