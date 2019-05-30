@@ -67,7 +67,7 @@
 
 //variables
 static uint8_t hour, min, sec, date; //rtc
-static uint8_t data_RTC[10]={0,0,0,0,0,0,0,0,0,0};
+static uint8_t data_RTC[11]={0,0,0,0,0,0,0,0,0,0,0};
 
 
 static uint8_t BCD2DEC(uint8_t data);

@@ -124,6 +124,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
     sample_dt = F_OUT / F_SAMPLE;
     sample_N = F_SAMPLE / F_OUT;
+    getRTC();
   /* USER CODE END 1 */
   
 
@@ -153,7 +154,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-    //setRTC(30,04,2019,19,25,0);
+    setRTC(19,25,0,14,20);
     CS43_SetVolume(40);
     CS43_Init(hi2c1, MODE_I2S);
     CS43_Enable_RightLeft(CS43_RIGHT_LEFT);

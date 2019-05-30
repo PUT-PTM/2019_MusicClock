@@ -11,7 +11,7 @@ extern TIM_HandleTypeDef htim4;
 
 int displayCounter = 1;
 int state = 0, displayState = 0;
-int godzina, minuta, timerValue = 0, temp_flag = 1, flash = 0, agodzina = 0, aminuta = 0;
+int godzina, minuta, timerValue = 0, temp_flag = 1, flash = 0, agodzina = 0, aminuta = 0, ifalarm=0;
 uint8_t alarmHour, alarmMinute;
 
 uint8_t BCD2DEC(uint8_t data) {
@@ -25,7 +25,7 @@ uint8_t DEC2BCD(uint8_t data) {
 void getRTC() {
     data_RTC[0] = 0x00;
     HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 1, 50);
-    HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 10, 50);
+    HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 11, 50);
 
     hour = BCD2DEC(data_RTC[2]);
     min = BCD2DEC(data_RTC[1]);
@@ -34,15 +34,15 @@ void getRTC() {
     alarmMinute = BCD2DEC(data_RTC[8]);
 }
 
-void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t alarmMinute, uint8_t alarmHour) {
-    uint8_t data_RTC[10];
+void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t alarmHour, uint8_t alarmMinute) {
+    uint8_t data_RTC[11];
     data_RTC[0] = 0x00;
     data_RTC[1] = DEC2BCD(ssec);//seconds
     data_RTC[2] = DEC2BCD(smin); //set minute
     data_RTC[3] = DEC2BCD(shour); //set hour
-    data_RTC[8] = DEC2BCD(alarmMinute);
-    data_RTC[9] = DEC2BCD(alarmHour);
-    HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 10, 50);
+    data_RTC[9] = DEC2BCD(alarmMinute);
+    data_RTC[10] = DEC2BCD(alarmHour);
+    HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 11, 50);
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
@@ -151,8 +151,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-    if (htim->Instance == TIM3) {
+    if (htim->Instance == TIM2) {
         getRTC();
+        if(alarmMinute==min&&alarmHour==hour){
+            ifalarm=1;
+        }
+        else ifalarm=0;
     }
     if (htim->Instance == TIM3) {
         timerValue++;
@@ -311,7 +315,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
         }
     }
     if (htim->Instance == TIM4) {
-        playSong();
+        if(ifalarm==1) {
+            playSong();
+        }
     }
 
 }
