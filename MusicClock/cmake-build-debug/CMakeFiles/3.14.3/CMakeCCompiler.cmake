@@ -70,6 +70,6 @@ endif()
 
 
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/arm-none-eabi/include/newlib-nano;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/include-fixed;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/arm-none-eabi/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;g_nano;c_nano;gcc;c_nano;nosys;gcc;c_nano;nosys")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/arm-none-eabi/lib/thumb/v7e-m;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/lib/gcc/arm-none-eabi/7.3.1;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/lib/gcc;C:/Program Files (x86)/GNU Tools Arm Embedded/7 2018-q2-update/arm-none-eabi/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

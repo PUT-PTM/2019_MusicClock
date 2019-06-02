@@ -32,8 +32,6 @@ static uint16_t audioBuffer16;
 
 static int16_t fileNamesSize = 0;
 
-void choose();
-
 void startSong(char *fileName);
 
 void changeFile(int8_t changeValue);

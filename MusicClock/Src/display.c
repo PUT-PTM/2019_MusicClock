@@ -155,7 +155,40 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
             break;
     }
 }
-
+void display_value(int value){
+    switch (value) {
+        case 0:
+            DISP_VAL_0;
+            break;
+        case 1:
+            DISP_VAL_1;
+            break;
+        case 2:
+            DISP_VAL_2;
+            break;
+        case 3:
+            DISP_VAL_3;
+            break;
+        case 4:
+            DISP_VAL_4;
+            break;
+        case 5:
+            DISP_VAL_5;
+            break;
+        case 6:
+            DISP_VAL_6;
+            break;
+        case 7:
+            DISP_VAL_7;
+            break;
+        case 8:
+            DISP_VAL_8;
+            break;
+        case 9:
+            DISP_VAL_9;
+            break;
+    }
+}
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM2) {
         getRTC();
@@ -195,7 +228,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 m2 = aminuta % 10;
                 break;
             case 3:
+                temp_flag=0;
                 h1=currentFile;
+                DISP_1_ON;
+                DISP_2_OFF;
+                DISP_3_OFF;
+                DISP_4_OFF;
+                display_value(h1);
         }
         DISP_1_OFF;
         DISP_2_OFF;
@@ -206,117 +245,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
             switch (displayCounter) {
                 case 1:
                     DISP_1_ON;
-                    switch (h1) {
-                        case 0:
-                            DISP_VAL_0;
-                            break;
-                        case 1:
-                            DISP_VAL_1;
-                            break;
-                        case 2:
-                            DISP_VAL_2;
-                            break;
-                    }
+                    display_value(h1);
                     displayCounter++;
                     break;
                 case 2:
                     DISP_2_ON;
-                    switch (h2) {
-                        case 0:
-                            DISP_VAL_0;
-                            break;
-                        case 1:
-                            DISP_VAL_1;
-                            break;
-                        case 2:
-                            DISP_VAL_2;
-                            break;
-                        case 3:
-                            DISP_VAL_3;
-                            break;
-                        case 4:
-                            DISP_VAL_4;
-                            break;
-                        case 5:
-                            DISP_VAL_5;
-                            break;
-                        case 6:
-                            DISP_VAL_6;
-                            break;
-                        case 7:
-                            DISP_VAL_7;
-                            break;
-                        case 8:
-                            DISP_VAL_8;
-                            break;
-                        case 9:
-                            DISP_VAL_9;
-                            break;
-                    }
+                   display_value(h2);
                     DISP_DOT;
                     displayCounter++;
                     break;
                 case 3:
                     DISP_3_ON;
-                    switch (m1) {
-                        case 0:
-                            DISP_VAL_0;
-                            break;
-                        case 1:
-                            DISP_VAL_1;
-                            break;
-                        case 2:
-                            DISP_VAL_2;
-                            break;
-                        case 3:
-                            DISP_VAL_3;
-                            break;
-                        case 4:
-                            DISP_VAL_4;
-                            break;
-                        case 5:
-                            DISP_VAL_5;
-                            break;
-                        case 6:
-                            DISP_VAL_6;
-                            break;
-                    }
+                    display_value(m1);
                     displayCounter++;
                     break;
                 case 4:
                     DISP_4_ON;
-                    switch (m2) {
-                        case 0:
-                            DISP_VAL_0;
-                            break;
-                        case 1:
-                            DISP_VAL_1;
-                            break;
-                        case 2:
-                            DISP_VAL_2;
-                            break;
-                        case 3:
-                            DISP_VAL_3;
-                            break;
-                        case 4:
-                            DISP_VAL_4;
-                            break;
-                        case 5:
-                            DISP_VAL_5;
-                            break;
-                        case 6:
-                            DISP_VAL_6;
-                            break;
-                        case 7:
-                            DISP_VAL_7;
-                            break;
-                        case 8:
-                            DISP_VAL_8;
-                            break;
-                        case 9:
-                            DISP_VAL_9;
-                            break;
-                    }
+                    display_value(m2);
                     displayCounter = 1;
                     break;
             }

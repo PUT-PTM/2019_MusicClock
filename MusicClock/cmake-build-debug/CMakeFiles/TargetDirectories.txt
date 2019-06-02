@@ -1,4 +1,4 @@
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/UPLOAD.dir
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/MusicClock.elf.dir
+C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/UPLOAD.dir
+C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/CMakeFiles/rebuild_cache.dir

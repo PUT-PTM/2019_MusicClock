@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Ania\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\191.6707.69\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = C:\Users\Ania\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\191.6707.69\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock
+CMAKE_SOURCE_DIR = C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MusicClock.elf.dir/depend.make
@@ -58,424 +58,424 @@ include CMakeFiles/MusicClock.elf.dir/flags.make
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.s
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c > CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.i
 
 CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c -o CMakeFiles\MusicClock.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.obj: ../Src/MY_CS43L22.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c
 
 CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c > CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c > CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/MY_CS43L22.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c -o CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\MY_CS43L22.c -o CMakeFiles\MusicClock.elf.dir\Src\MY_CS43L22.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj: ../Src/diskio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\diskio.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/MusicClock.elf.dir/Src/diskio.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\diskio.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c
 
 CMakeFiles/MusicClock.elf.dir/Src/diskio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/diskio.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c > CMakeFiles\MusicClock.elf.dir\Src\diskio.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c > CMakeFiles\MusicClock.elf.dir\Src\diskio.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/diskio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/diskio.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c -o CMakeFiles\MusicClock.elf.dir\Src\diskio.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\diskio.c -o CMakeFiles\MusicClock.elf.dir\Src\diskio.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/display.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/display.c.obj: ../Src/display.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/MusicClock.elf.dir/Src/display.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\display.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/MusicClock.elf.dir/Src/display.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\display.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c
 
 CMakeFiles/MusicClock.elf.dir/Src/display.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/display.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c > CMakeFiles\MusicClock.elf.dir\Src\display.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c > CMakeFiles\MusicClock.elf.dir\Src\display.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/display.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/display.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c -o CMakeFiles\MusicClock.elf.dir\Src\display.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\display.c -o CMakeFiles\MusicClock.elf.dir\Src\display.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj: ../Src/ff.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ff.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ff.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ff.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c
 
 CMakeFiles/MusicClock.elf.dir/Src/ff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/ff.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c > CMakeFiles\MusicClock.elf.dir\Src\ff.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c > CMakeFiles\MusicClock.elf.dir\Src\ff.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/ff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/ff.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c -o CMakeFiles\MusicClock.elf.dir\Src\ff.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ff.c -o CMakeFiles\MusicClock.elf.dir\Src\ff.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.obj: ../Src/ffsystem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c
 
 CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c > CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c > CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/ffsystem.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c -o CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffsystem.c -o CMakeFiles\MusicClock.elf.dir\Src\ffsystem.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.obj: ../Src/ffunicode.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c
 
 CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c > CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c > CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/ffunicode.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c -o CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\ffunicode.c -o CMakeFiles\MusicClock.elf.dir\Src\ffunicode.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/main.c.obj: ../Src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/MusicClock.elf.dir/Src/main.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\main.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/MusicClock.elf.dir/Src/main.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\main.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c
 
 CMakeFiles/MusicClock.elf.dir/Src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/main.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c > CMakeFiles\MusicClock.elf.dir\Src\main.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c > CMakeFiles\MusicClock.elf.dir\Src\main.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/main.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c -o CMakeFiles\MusicClock.elf.dir\Src\main.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\main.c -o CMakeFiles\MusicClock.elf.dir\Src\main.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/music.c.obj: ../Src/music.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/MusicClock.elf.dir/Src/music.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\music.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/MusicClock.elf.dir/Src/music.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\music.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c
 
 CMakeFiles/MusicClock.elf.dir/Src/music.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/music.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c > CMakeFiles\MusicClock.elf.dir\Src\music.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c > CMakeFiles\MusicClock.elf.dir\Src\music.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/music.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/music.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c -o CMakeFiles\MusicClock.elf.dir\Src\music.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\music.c -o CMakeFiles\MusicClock.elf.dir\Src\music.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj: ../Src/stm32f4xx_hal_msp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c > CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c > CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_hal_msp.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_hal_msp.c -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_hal_msp.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj: ../Src/stm32f4xx_it.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c > CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c > CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/stm32f4xx_it.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\stm32f4xx_it.c -o CMakeFiles\MusicClock.elf.dir\Src\stm32f4xx_it.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.obj: ../Src/syscalls.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c
 
 CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c > CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c > CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/syscalls.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c -o CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\syscalls.c -o CMakeFiles\MusicClock.elf.dir\Src\syscalls.c.s
 
 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj: ../Src/system_stm32f4xx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.obj   -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.obj   -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c
 
 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.i"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c > CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.i
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c > CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.i
 
 CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.s"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c -o CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.s
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\Src\system_stm32f4xx.c -o CMakeFiles\MusicClock.elf.dir\Src\system_stm32f4xx.c.s
 
 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj: CMakeFiles/MusicClock.elf.dir/flags.make
 CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj: ../startup/startup_stm32f407xx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj"
-	"C:\PROGRA~2\GNU Tools Arm Embedded\7 2018-q2-update\bin\arm-none-eabi-gcc.exe" $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\MusicClock.elf.dir\startup\startup_stm32f407xx.s.obj -c C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\startup\startup_stm32f407xx.s
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj"
+	C:\PROGRA~2\GNUTOO~1\72018-~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\MusicClock.elf.dir\startup\startup_stm32f407xx.s.obj -c C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\startup\startup_stm32f407xx.s
 
 # Object files for target MusicClock.elf
 MusicClock_elf_OBJECTS = \
@@ -551,12 +551,12 @@ MusicClock.elf: CMakeFiles/MusicClock.elf.dir/Src/system_stm32f4xx.c.obj
 MusicClock.elf: CMakeFiles/MusicClock.elf.dir/startup/startup_stm32f407xx.s.obj
 MusicClock.elf: CMakeFiles/MusicClock.elf.dir/build.make
 MusicClock.elf: CMakeFiles/MusicClock.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking C executable MusicClock.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking C executable MusicClock.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MusicClock.elf.dir\link.txt --verbose=$(VERBOSE)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.hex"
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.bin"
-	arm-none-eabi-objcopy -Oihex C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.hex
-	arm-none-eabi-objcopy -Obinary C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.bin
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.hex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.bin"
+	arm-none-eabi-objcopy -Oihex C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.hex
+	arm-none-eabi-objcopy -Obinary C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.elf C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/MusicClock.bin
 
 # Rule to build all files generated by this target.
 CMakeFiles/MusicClock.elf.dir/build: MusicClock.elf
@@ -568,6 +568,6 @@ CMakeFiles/MusicClock.elf.dir/clean:
 .PHONY : CMakeFiles/MusicClock.elf.dir/clean
 
 CMakeFiles/MusicClock.elf.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\Ania\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles\MusicClock.elf.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug C:\Users\macie\Documents\GitHub\2019_MusicClock\MusicClock\cmake-build-debug\CMakeFiles\MusicClock.elf.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MusicClock.elf.dir/depend
 
