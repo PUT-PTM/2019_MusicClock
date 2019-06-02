@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock
+# Install script for directory: C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/macie/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Ania/Documents/GitHub/2019_MusicClock/MusicClock/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

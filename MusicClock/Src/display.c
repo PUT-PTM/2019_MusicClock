@@ -9,9 +9,10 @@ extern SPI_HandleTypeDef hspi1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 
-int displayCounter = 1;
+int displayCounter = 1, piosenka=0;
 int state = 0, displayState = 0;
-int godzina, minuta, timerValue = 0, temp_flag = 1, flash = 0, agodzina = 0, aminuta = 0, ifalarm=0;
+int godzina, minuta, timerValue = 0, temp_flag = 1, flash = 0, agodzina = 0, aminuta = 0, ifalarm = 0;
+int ifcheck=1;
 uint8_t alarmHour, alarmMinute;
 
 uint8_t BCD2DEC(uint8_t data) {
@@ -65,9 +66,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 for (int i = 0; i < 1000000; i++);
             }
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
-                displayState=3;
+                displayState = 3;
                 state = 5;
-                temp_flag=0;
+                temp_flag = 0;
+                for (int i = 0; i < 1000000; i++);
+            }
+            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)&&ifalarm==1) {
+                ifalarm=0;
                 for (int i = 0; i < 1000000; i++);
             }
             break;
@@ -146,8 +151,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 else aminuta--;
                 setRTC(godzina, minuta, sec, agodzina, aminuta);
                 for (int i = 0; i < 1000000; i++);
-            }
-            else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
+            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
                 setRTC(godzina, minuta, sec, agodzina, aminuta);
                 for (int i = 0; i < 1000000; i++);
@@ -157,16 +161,20 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
         case 5:
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
                 changeFile(1);
-                for (int i = 0; i < 1000000; i++);
+                piosenka++;
+                if(piosenka>1)
+                    piosenka=0;
+                for (int i = 0; i < 3000000; i++);
             }
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
-                state=0;
-                temp_flag=1;
+                state = 0;
+                temp_flag = 1;
                 for (int i = 0; i < 1000000; i++);
             }
     }
 }
-void display_value(int value){
+
+void display_value(int value) {
     switch (value) {
         case 0:
             DISP_VAL_0;
@@ -200,13 +208,16 @@ void display_value(int value){
             break;
     }
 }
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM2) {
         getRTC();
-        if(aminuta==minuta&&agodzina==godzina){
-            ifalarm=1;
+        if (aminuta == minuta && agodzina == godzina&&ifcheck==1) {
+            ifalarm = 1; ifcheck=0;
         }
-        else ifalarm=0;
+        if (aminuta != minuta && agodzina != godzina&&ifcheck==0) {
+            ifcheck=1;
+        }
     }
     if (htim->Instance == TIM3) {
         timerValue++;
@@ -239,20 +250,24 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 m2 = aminuta % 10;
                 break;
             case 3:
-                h1=currentFile;
+
+
                 DISP_1_ON;
                 DISP_2_OFF;
                 DISP_3_OFF;
                 DISP_4_OFF;
-                display_value(h1);
+                DISP_VAL_NULL;
+                DISP_DOT;
+                display_value(piosenka);
                 break;
         }
-        DISP_1_OFF;
-        DISP_2_OFF;
-        DISP_3_OFF;
-        DISP_4_OFF;
-        DISP_VAL_NULL;
         if (temp_flag == 1) {
+            DISP_1_OFF;
+            DISP_2_OFF;
+            DISP_3_OFF;
+            DISP_4_OFF;
+            DISP_VAL_NULL;
+
             switch (displayCounter) {
                 case 1:
                     DISP_1_ON;
@@ -261,7 +276,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                     break;
                 case 2:
                     DISP_2_ON;
-                   display_value(h2);
+                    display_value(h2);
                     DISP_DOT;
                     displayCounter++;
                     break;
@@ -279,7 +294,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
         }
     }
     if (htim->Instance == TIM4) {
-        if(ifalarm==1) {
+        if (ifalarm == 1) {
             playSong();
         }
     }
