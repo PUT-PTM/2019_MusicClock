@@ -179,7 +179,7 @@ int main(void)
     htim2.Instance->ARR = 49999; //Prze³adowanie z czêstotliwociı 20Hz (debouncing)
 
     map_filenames();
-    //changeFile(1);
+    //changeFile(0);
     strcpy(currentFileName, fileNames[currentFile]);
     startSong(currentFileName);
   /* USER CODE END 2 */

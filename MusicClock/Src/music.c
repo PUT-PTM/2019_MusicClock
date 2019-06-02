@@ -24,6 +24,11 @@ void startSong(char *fileName) {
 }
 
 void changeFile(int8_t changeValue) {
+    __HAL_TIM_DISABLE_IT(&htim4, TIM_IT_UPDATE); //Dezaktywowanie przerwań
+    HAL_TIM_Base_Stop(&htim4);                     //Zatrzymanie licznika
+            __HAL_TIM_SetCounter(&htim4, 0);             //Ustawienie licznika na 0
+
+    fresult = f_close(&file);
     currentFile += changeValue;
     if (currentFile >= fileNamesSize) {
         currentFile = 0;

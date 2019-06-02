@@ -64,6 +64,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 displayState = 2;
                 for (int i = 0; i < 1000000; i++);
             }
+            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
+                changeFile(1);
+                displayState=3;
+                for (int i = 0; i < 1000000; i++);
+            }
             break;
             //ustawianie godziny
         case 1:
@@ -140,10 +145,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 else aminuta--;
                 setRTC(godzina, minuta, sec, agodzina, aminuta);
                 for (int i = 0; i < 1000000; i++);
-            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
+            }
+            else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
                 setRTC(godzina, minuta, sec, agodzina, aminuta);
-                for (int i = 0; i < 8000000; i++);
+                for (int i = 0; i < 1000000; i++);
                 flash = 0;
             }
             break;
@@ -188,6 +194,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 m1 = aminuta / 10;
                 m2 = aminuta % 10;
                 break;
+            case 3:
+                h1=currentFile;
         }
         DISP_1_OFF;
         DISP_2_OFF;
