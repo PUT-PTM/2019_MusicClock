@@ -65,8 +65,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 for (int i = 0; i < 1000000; i++);
             }
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
-                changeFile(1);
                 displayState=3;
+                state = 5;
+                temp_flag=0;
                 for (int i = 0; i < 1000000; i++);
             }
             break;
@@ -153,6 +154,16 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
                 flash = 0;
             }
             break;
+        case 5:
+            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
+                changeFile(1);
+                for (int i = 0; i < 1000000; i++);
+            }
+            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
+                state=0;
+                temp_flag=1;
+                for (int i = 0; i < 1000000; i++);
+            }
     }
 }
 void display_value(int value){
@@ -228,13 +239,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                 m2 = aminuta % 10;
                 break;
             case 3:
-                temp_flag=0;
                 h1=currentFile;
                 DISP_1_ON;
                 DISP_2_OFF;
                 DISP_3_OFF;
                 DISP_4_OFF;
                 display_value(h1);
+                break;
         }
         DISP_1_OFF;
         DISP_2_OFF;
