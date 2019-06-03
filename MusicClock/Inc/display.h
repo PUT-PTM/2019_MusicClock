@@ -9,7 +9,6 @@
 #include "stm32f4xx_it.h"
 #include "main.h"
 
-//defines
 #define DISP_1_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET)
 #define DISP_1_OFF  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET)
 #define DISP_2_ON   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET)
@@ -65,22 +64,13 @@
 
 #define DISP_DOT    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_RESET)
 
-//variables
-static uint8_t hour, min, sec, date; //rtc
-static uint8_t data_RTC[11]={0,0,0,0,0,0,0,0,0,0,0};
-
+static uint8_t min, date;
+static uint8_t data_RTC[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 static uint8_t BCD2DEC(uint8_t data);
 
 static uint8_t DEC2BCD(uint8_t data);
 
-static int option; //0-clock, 1-set clock, 2 - set alarm, 3 - choose song
-
-
-//function prototypes
-
 void getRTC();
 
-void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t budzikminuta, uint8_t budzikgodzina);
-
-
+void setRTC(uint8_t shour, uint8_t smin, uint8_t budzikminuta, uint8_t budzikgodzina);

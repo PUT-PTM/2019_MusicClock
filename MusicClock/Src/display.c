@@ -9,18 +9,17 @@ extern SPI_HandleTypeDef hspi1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 
-int displayCounter = 1, piosenka=0;
+int displayCounter = 1, songNumber = 1;
 int state = 0, displayState = 0;
-int godzina, minuta, timerValue = 0, temp_flag = 1, flash = 0, agodzina = 0, aminuta = 0, ifalarm = 0;
-int ifcheck=1;
-uint8_t alarmHour, alarmMinute;
+int clockHour, clockMinute, flashValue = 0, displayOn = 1, isFlashing = 0, alarmHour = 0, alarmMinute = 0, alarmRinging = 0;
+int napSet = 1;
 
 uint8_t BCD2DEC(uint8_t data) {
-    return (data >> 4) * 10 + (data & 0x0f);
+    return (data >> 4u) * 10 + (data & 0x0fu);
 }
 
 uint8_t DEC2BCD(uint8_t data) {
-    return (data / 10) << 4 | (data % 10);
+    return (data / 10u) << 4u | (data % 10u);
 }
 
 void getRTC() {
@@ -28,147 +27,139 @@ void getRTC() {
     HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 1, 50);
     HAL_I2C_Master_Receive(&hi2c1, 0xD0, data_RTC, 11, 50);
 
-    godzina = BCD2DEC(data_RTC[2]);
-    minuta = BCD2DEC(data_RTC[1]);
-    sec = BCD2DEC(data_RTC[0]);
-    agodzina = BCD2DEC(data_RTC[9]);
-    aminuta = BCD2DEC(data_RTC[8]);
+    clockHour = BCD2DEC(data_RTC[2]);
+    clockMinute = BCD2DEC(data_RTC[1]);
+    alarmHour = BCD2DEC(data_RTC[9]);
+    alarmMinute = BCD2DEC(data_RTC[8]);
 }
 
-void setRTC(uint8_t shour, uint8_t smin, uint8_t ssec, uint8_t alarmHour, uint8_t alarmMinute) {
-    uint8_t data_RTC[11];
+void setRTC(uint8_t setClockHour, uint8_t setClockMinute, uint8_t setAlarmHour, uint8_t setAlarmMinute) {
     data_RTC[0] = 0x00;
-    data_RTC[1] = DEC2BCD(ssec);//seconds
-    data_RTC[2] = DEC2BCD(smin); //set minute
-    data_RTC[3] = DEC2BCD(shour); //set hour
-    data_RTC[9] = DEC2BCD(alarmMinute);
-    data_RTC[10] = DEC2BCD(alarmHour);
+    data_RTC[2] = DEC2BCD(setClockMinute);
+    data_RTC[3] = DEC2BCD(setClockHour);
+    data_RTC[9] = DEC2BCD(setAlarmMinute);
+    data_RTC[10] = DEC2BCD(setAlarmHour);
     HAL_I2C_Master_Transmit(&hi2c1, 0xD0, data_RTC, 11, 50);
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-    //minuta = (int) min;
-    //godzina = (int) hour;
-    //aminuta = (int) alarmMinute;
-    //agodzina = (int) alarmHour;
     switch (state) {
         case 0:
             displayState = 0;
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET)) {
-                flash = 1;
+                isFlashing = 1;
                 state = 1;
                 for (int i = 0; i < 1000000; i++);
-            }
-            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
-                flash = 1;
+            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
+                isFlashing = 1;
                 state = 3;
                 displayState = 2;
                 for (int i = 0; i < 1000000; i++);
-            }
-            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
+            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
                 displayState = 3;
                 state = 5;
-                temp_flag = 0;
+                displayOn = 0;
                 for (int i = 0; i < 1000000; i++);
-            }
-            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)&&ifalarm==1) {
-                ifalarm=0;
+            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET) && alarmRinging == 1) {
+                alarmRinging = 0;
                 for (int i = 0; i < 1000000; i++);
             }
             break;
-            //ustawianie godziny
         case 1:
             if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET) {
-                if (godzina == 23)
-                    godzina = 0;
-                else godzina++;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (clockHour == 23)
+                    clockHour = 0;
+                else clockHour++;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
-                if (godzina == 0)
-                    godzina = 23;
-                else godzina--;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (clockHour == 0)
+                    clockHour = 23;
+                else clockHour--;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 2;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
-                for (int i = 0; i < 8000000; i++);
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
+                displayOn = 1;
+                for (int i = 0; i < 5000000; i++);
             }
             break;
         case 2:
-
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET)) {
-                if (minuta == 59)
-                    minuta = 0;
-                else minuta++;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (clockMinute == 59)
+                    clockMinute = 0;
+                else clockMinute++;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
-                if (minuta == 0)
-                    minuta = 59;
-                else minuta--;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (clockMinute == 0)
+                    clockMinute = 59;
+                else clockMinute--;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
+                displayOn = 1;
                 for (int i = 0; i < 1000000; i++);
-                flash = 0;
+                isFlashing = 0;
             }
             break;
-            //ustawianie budzika
         case 3:
             displayState = 2;
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET)) {
-                if (agodzina == 23)
-                    agodzina = 0;
-                else agodzina++;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (alarmHour == 23)
+                    alarmHour = 0;
+                else alarmHour++;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
-                if (agodzina == 0)
-                    agodzina = 23;
-                else agodzina--;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (alarmHour == 0)
+                    alarmHour = 23;
+                else alarmHour--;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 4;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
-                for (int i = 0; i < 8000000; i++);
+                displayOn = 1;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
+                for (int i = 0; i < 3000000; i++);
             }
             break;
         case 4:
             displayState = 2;
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET)) {
-                if (aminuta == 59)
-                    aminuta = 0;
-                else aminuta++;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (alarmMinute == 59)
+                    alarmMinute = 0;
+                else alarmMinute++;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET)) {
-                if (aminuta == 0)
-                    aminuta = 59;
-                else aminuta--;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                if (alarmMinute == 0)
+                    alarmMinute = 59;
+                else alarmMinute--;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
             } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
-                setRTC(godzina, minuta, sec, agodzina, aminuta);
+                displayOn = 1;
+                setRTC(clockHour, clockMinute, alarmHour, alarmMinute);
                 for (int i = 0; i < 1000000; i++);
-                flash = 0;
+                isFlashing = 0;
             }
+            break;
+        default:
             break;
         case 5:
             if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_SET)) {
                 changeFile(1);
-                piosenka++;
-                if(piosenka>1)
-                    piosenka=0;
-                for (int i = 0; i < 3000000; i++);
-            }
-            if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
+                songNumber++;
+                if (songNumber > 3)
+                    songNumber = 1;
+                for (int i = 0; i < 2000000; i++);
+            } else if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET)) {
                 state = 0;
-                temp_flag = 1;
+                displayOn = 1;
                 for (int i = 0; i < 1000000; i++);
             }
     }
@@ -206,68 +197,71 @@ void display_value(int value) {
         case 9:
             DISP_VAL_9;
             break;
+        default:
+            break;
     }
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == TIM2) {
         getRTC();
-        if (aminuta == minuta && agodzina == godzina&&ifcheck==1) {
-            ifalarm = 1; ifcheck=0;
-        }
-        if (aminuta != minuta && agodzina != godzina&&ifcheck==0) {
-            ifcheck=1;
+        if (alarmMinute == clockMinute && alarmHour == clockHour && napSet == 1) {
+            alarmRinging = 1;
+            napSet = 0;
+        } else if (alarmMinute != clockMinute && alarmHour != clockHour && napSet == 0) {
+            napSet = 1;
         }
     }
     if (htim->Instance == TIM3) {
-        timerValue++;
-        if (timerValue > 1500) timerValue = 0;
+        flashValue++;
+        if (flashValue > 1000)
+            flashValue = 0;
         uint8_t h1, h2, m1, m2;
         switch (displayState) {
             case 0:
-                if (flash == 1) {
-                    if (timerValue > 300)
-                        temp_flag = 1;
-                    else temp_flag = 0;
+                if (isFlashing == 1) {
+                    if (flashValue > 100)
+                        displayOn = 1;
+                    else {
+                        displayOn = 0;
+                    }
                 }
-
-                h1 = godzina / 10;
-                h2 = godzina % 10;
-                m1 = minuta / 10;
-                m2 = minuta % 10;
+                h1 = clockHour / 10;
+                h2 = clockHour % 10;
+                m1 = clockMinute / 10;
+                m2 = clockMinute % 10;
                 break;
             case 2:
-                if (flash == 1) {
-                    if (timerValue > 300)
-                        temp_flag = 1;
-                    else temp_flag = 0;
+                if (isFlashing == 1) {
+                    if (flashValue > 300)
+                        displayOn = 1;
+                    else displayOn = 0;
                 }
-
-
-                h1 = agodzina / 10;
-                h2 = agodzina % 10;
-                m1 = aminuta / 10;
-                m2 = aminuta % 10;
+                h1 = alarmHour / 10;
+                h2 = alarmHour % 10;
+                m1 = alarmMinute / 10;
+                m2 = alarmMinute % 10;
                 break;
             case 3:
-
-
                 DISP_1_ON;
                 DISP_2_OFF;
                 DISP_3_OFF;
                 DISP_4_OFF;
                 DISP_VAL_NULL;
                 DISP_DOT;
-                display_value(piosenka);
+                display_value(songNumber);
+                break;
+            default:
                 break;
         }
-        if (temp_flag == 1) {
+        if (displayState != 3) {
             DISP_1_OFF;
             DISP_2_OFF;
             DISP_3_OFF;
             DISP_4_OFF;
             DISP_VAL_NULL;
-
+        }
+        if (displayOn == 1) {
             switch (displayCounter) {
                 case 1:
                     DISP_1_ON;
@@ -290,11 +284,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
                     display_value(m2);
                     displayCounter = 1;
                     break;
+                default:
+                    break;
             }
         }
     }
     if (htim->Instance == TIM4) {
-        if (ifalarm == 1) {
+        if (alarmRinging == 1) {
             playSong();
         }
     }
