@@ -3,11 +3,11 @@
 ## Overview
 Clock with alarm option - now you can be woken up everyday by your favorite music.
 ## Description
-Use your "keyboard" to use it!
-Press K4 to change time, then K4 to increase hour, K5 to decrease and K7 to apply and repeat it for minutes.
-Press K5 to change alarm, works just like changing time.
-Every press of K6 changes song, K7 applies it.
-Press K7 to stop your ringing alarm.
+Use your "keyboard" to use it!</br>
+Press K4 to change time, then K4 to increase hour, K5 to decrease and K7 to apply and repeat it for minutes.</br>
+Press K5 to change alarm, works just like changing time.</br>
+Every press of K6 changes song, K7 applies it.</br>
+Press K7 to stop your ringing alarm.</br>
 ## Tools
 8-segment display
 
