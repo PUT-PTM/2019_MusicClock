@@ -13,13 +13,13 @@ RTC Module
 
 SD card reader module
 ## How to run
-
-## How to compile
+Connect your MusicClock to Computer with USB. Clone project and run in Clion.
 
 ## Future improvements
+In future we want to improve quality of music.
 
-## Attributions
-
+## Distributions
+RTC - tutorial https://www.youtube.com/watch?v=z3VMKQKJIbA
 ## License
 
 ## Credits
