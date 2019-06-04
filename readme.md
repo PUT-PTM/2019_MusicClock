@@ -24,8 +24,8 @@ Connect your MusicClock to Computer with USB. Clone project and run in Clion.
 - add nap functionality
 
 ## Distributions
-RTC - tutorial https://www.youtube.com/watch?v=z3VMKQKJIbA
-FatFs - http://elm-chan.org/fsw/ff/00index_e.html
+- RTC - tutorial https://www.youtube.com/watch?v=z3VMKQKJIbA
+- FatFs - http://elm-chan.org/fsw/ff/00index_e.html
 ## License
 MID License
 ## Credits
